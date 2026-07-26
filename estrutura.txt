@@ -1,0 +1,86 @@
+navbar
+hero
+section - 
+- Nossos Serviços
+- quem somos
+- projetos
+- o que fazemos 
+- nossos clientes
+- footer
+
+
+pag
+- inicio
+- Serviços
+-  projetos
+- sobre
+- trabalhe conosco
+- contato
+
+
+
+
+#Hero{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/modern-city-construction-site.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: teste 5s linear infinite alternate;
+}
+
+@keyframes teste {
+    0%{
+        background-size: 150%;
+    }
+    10%{
+        background-position: 5%;
+    }
+    50%{
+        background-position: 10%;
+    }
+    100%{
+        background-position: 100%;
+        background-size: 100%;
+    }
+}
+
+#Hero .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+#tittle-Hero{
+    z-index: 998;
+    color: white;
+    width: 600px;
+}
+
+#btnA-hero{
+    width: 150px;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    border: 1px solid white;
+}
+
+#btnB-hero{
+    width: 150px;
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+#Hero .container{
+    position: relative;
+    z-index: 2;
+}

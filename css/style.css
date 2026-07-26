@@ -1,0 +1,187 @@
+:root{
+    --cor-primaria: ;
+
+    --sombra: 0 0 8px rgba(0, 0, 0, 0.4);
+
+    --cor-primaria: white;
+
+    --cor-secundaria: #0E5B65;
+}
+
+*{
+}
+
+
+#header{
+    position: fixed !important;
+    width: 100%;
+    top: 0;
+    box-shadow: var(--sombra);
+    transition: .4s ease;
+    z-index: 999;
+}
+
+@media (max-width: 400px) {
+    #logo{
+        width: 200px;
+    }
+}
+
+.navbar-toggler {
+    border-color: #ffffff !important; /* Cor da borda */
+}
+
+#header button{
+    border-radius: 0 !important;
+}
+
+#header .navlink a{
+    color: var(--cor-primaria);
+    transition: .3s ease;
+}
+
+#header .navlink a:hover{
+}
+
+#btn-nav{
+    border: 1px solid white;
+    color: white;
+}
+
+#btn-nav:hover{
+    background-color: white;
+    color: black;
+}
+
+#header.scroll{
+    background-color: white;
+}
+
+#header.scroll .navlink a{
+    color: black;
+}
+
+#header.scroll #btn-nav{
+    border: 1px solid black;
+    color: black;
+}
+
+#header.scroll #btn-nav:hover{
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+}
+
+.navbar-toggler:focus{
+    box-shadow: none;
+}
+
+#header.scroll .navbar-toggler {
+    border-color: black !important; /* Cor da borda */
+}
+
+#header.scroll .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+
+}
+
+.eventoToggle{
+    background-color: white;
+}
+
+.eventoToggle .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+.eventoToggle .navlink a{
+    color: black !important;
+}
+
+.eventoToggle #btn-nav{
+    border: 1px solid black;
+    color: black;
+}
+
+.eventoToggle #btn-nav:hover{
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+}
+#Hero{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/modern-city-construction-site.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: teste 5s linear infinite alternate;
+}
+
+@keyframes teste {
+    0%{
+        background-size: 150%;
+    }
+    10%{
+        background-position: 5%;
+    }
+    50%{
+        background-position: 10%;
+    }
+    100%{
+        background-position: 100%;
+        background-size: 100%;
+    }
+}
+
+#Hero .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+#tittle-Hero{
+    z-index: 998;
+    color: white;
+    width: 600px;
+}
+
+#btnA-hero{
+    width: 150px;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    border: 1px solid white;
+    transition: .3s ease;
+}
+
+#btnB-hero{
+    width: 150px;
+    padding: 10px;
+    background-color: transparent;
+    transition: .3s ease;
+    color: white;
+    border: 1px solid white;
+}
+
+#btnA-hero:hover, #btnB-hero:hover{
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+} 
+
+#Hero .container{
+    position: relative;
+    z-index: 2;
+}
+
+.ativo{
+    border-bottom: 1px solid white;
+}
+
+
