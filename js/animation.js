@@ -3,6 +3,8 @@ const logo = document.getElementById('logo');
 let logoBranco = true;
 let scroll = false;
 
+let navAberto = false;
+
 window.addEventListener("scroll", mudarnav)
 
 function mudarnav(){
@@ -11,6 +13,8 @@ function mudarnav(){
         logo.src = "img/logoPreto.png"
         scroll = true
         logoBranco = false;
+
+        
     } else{
         header.classList.remove("scroll");
         logo.src = "img/logoBranco.png"
@@ -25,12 +29,8 @@ function mudarnav(){
 
 const btnToggle = document.getElementById("btn-toggle");
 
-btnToggle.addEventListener("click", eventoToggle)
-function eventoToggle(){
-    if(scroll){
-
-    } else{
-        header.classList.toggle("eventoToggle")
+function abrirNavToggle(){
+    header.classList.toggle("eventoToggle")
         if(logoBranco){
             logo.src = "img/logoPreto.png"
             logoBranco = false;
@@ -39,4 +39,33 @@ function eventoToggle(){
             logoBranco = true;
         }
     }
+
+
+btnToggle.addEventListener("click", eventoToggle)
+function eventoToggle(){
+    if(scroll){
+        navAberto = true;
+    } else if(window.scrollY < 50){
+        navAberto = true;
+        abrirNavToggle()
+    }
 }
+
+
+
+let ultimaPosicaoScroll = window.scrollY;
+
+window.addEventListener("scroll", () => {
+    const posicaoAtual = window.scrollY;
+    
+    const diferenca = Math.abs(posicaoAtual - ultimaPosicaoScroll);
+
+    if (diferenca >= 1) {
+        if(navAberto){
+            btnToggle.click();
+            navAberto = false;
+        }
+
+        ultimaPosicaoScroll = posicaoAtual;
+    }
+});
