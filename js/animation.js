@@ -1,71 +1,46 @@
-const header = document.getElementById('header');
-const logo = document.getElementById('logo');
-let logoBranco = true;
-let scroll = false;
+const header = document.getElementById("header");
+        const logo = document.getElementById("logo");
+        const btnToggle = document.getElementById("btn-toggle");
+        const menuNavbar = document.getElementById("menuNavbar");
 
-let navAberto = false;
-
-window.addEventListener("scroll", mudarnav)
-
-function mudarnav(){
-    if(window.scrollY > 50){
-        header.classList.add("scroll");
-        logo.src = "img/logoPreto.png"
-        scroll = true
-        logoBranco = false;
-
-        
-    } else{
-        header.classList.remove("scroll");
-        logo.src = "img/logoBranco.png"
-        scroll = false;
-        logoBranco = true;
-    }
-}
-
-
-
-///toggle
-
-const btnToggle = document.getElementById("btn-toggle");
-
-function abrirNavToggle(){
-    header.classList.toggle("eventoToggle")
-        if(logoBranco){
+        function mostrarNavBranco(){
+            header.classList.add("branco");
             logo.src = "img/logoPreto.png"
-            logoBranco = false;
-        } else{
+        }
+
+        function mostrarNavTransparente(){
+            header.classList.remove("branco");
             logo.src = "img/logoBranco.png"
-            logoBranco = true;
-        }
-    }
-
-
-btnToggle.addEventListener("click", eventoToggle)
-function eventoToggle(){
-    if(scroll){
-        navAberto = true;
-    } else if(window.scrollY < 50){
-        navAberto = true;
-        abrirNavToggle()
-    }
-}
-
-
-
-let ultimaPosicaoScroll = window.scrollY;
-
-window.addEventListener("scroll", () => {
-    const posicaoAtual = window.scrollY;
-    
-    const diferenca = Math.abs(posicaoAtual - ultimaPosicaoScroll);
-
-    if (diferenca >= 1) {
-        if(navAberto){
-            btnToggle.click();
-            navAberto = false;
         }
 
-        ultimaPosicaoScroll = posicaoAtual;
-    }
-});
+        window.addEventListener("scroll", ()=>{
+            if(scrollY > 50){
+                mostrarNavBranco();
+            } else{
+                if(!navAberto){
+                    mostrarNavTransparente();
+                }
+            }
+            
+        })
+
+        btnToggle.addEventListener("click", btnToggleClick);
+
+        let navAberto = false;
+
+        function btnToggleClick(){
+
+            if(navAberto){
+                if(window.scrollY < 50){
+                    mostrarNavTransparente();
+                }
+                menuNavbar.classList.remove("menu-opacity")
+                navAberto = false;
+            } else{
+                if(scrollY < 50){
+                    mostrarNavBranco();
+                }
+                menuNavbar.classList.add("menu-opacity")
+                navAberto = true;
+            }
+        }
