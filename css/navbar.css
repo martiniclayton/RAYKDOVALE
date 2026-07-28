@@ -30,6 +30,10 @@
 
         #header #menuNavbar a{
             color: var(--cor-principal);
+            transition: .3s ease;
+        }
+
+        #header #menuNavbar a:hover{
         }
 
         #header #menuNavbar button{

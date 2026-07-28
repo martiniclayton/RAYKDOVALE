@@ -44,3 +44,9 @@ const header = document.getElementById("header");
                 navAberto = true;
             }
         }
+
+const rect = logo.getBoundingClientRect();
+        console.log("Distância do topo:", rect.top);
+console.log("Distância da esquerda:", rect.left);
+console.log("Largura da logo:", rect.width);
+console.log("Altura da logo:", rect.height);
