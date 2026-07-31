@@ -62,6 +62,9 @@
             menuNavbar.classList.remove("sombra");
             document.body.classList.remove("travar");
 
+            if(window.scrollY > 50){
+                NavBranco();
+            }
 
         }
 
