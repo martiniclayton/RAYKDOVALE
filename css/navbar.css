@@ -9,7 +9,7 @@
 
         button:focus-visible, a:focus-visible{
             border: 1px solid rgba(0, 0, 0, 0.4);
-            box-shadow: none !important;
+            box-shadow: none;
             font-weight: bold;
         }
         .divLogoFecharMenu{
@@ -22,7 +22,7 @@
             top: 0;
             background-color: transparent;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            box-shadow: none;
             transition: .3s ease;
 
             animation: entradaheader .8s ease;
@@ -51,13 +51,13 @@
         }
 
 
-        #header #menuNavbar .btn-orcamento{
+        #header #menuNavbar .btn-primario{
             color: var(--cor-primaria);
             border: 1px solid var(--cor-primaria);
             border-radius: 0;
         }
 
-        #header #menuNavbar .btn-orcamento:hover{
+        #header #menuNavbar .btn-primario:hover{
             background-color: var(--cor-primaria);
             color: black;
             border-radius: 0;
@@ -65,6 +65,7 @@
 
         #header.branco{
             background-color: var(--cor-primaria);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
         }
 
         #header.branco #menuNavbar a{
@@ -72,12 +73,12 @@
         }
 
 
-        #header.branco #menuNavbar .btn-orcamento{
+        #header.branco #menuNavbar .btn-primario{
             color: var(--cor-secundaria);
             border: 1px solid var(--cor-secundaria);
         }
 
-        #header.branco #menuNavbar .btn-orcamento:hover{
+        #header.branco #menuNavbar .btn-primario:hover{
             background-color: var(--cor-secundaria);
             color: var(--cor-primaria);
             border-radius: 0;
@@ -175,29 +176,18 @@
             #btn-toggleMenu .navbar-toggler-icon {
                 background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
             }
-            #header{
-            }
 
             #header #menuNavbar a{
                 color: var(--cor-secundaria);
             }
 
-            #header #menuNavbar a.ativo{
-                opacity: .7;
-                cursor: default;
-            }
-
-            #header #menuNavbar a:hover{
-                opacity: .7;
-            }
-
-            #header #menuNavbar .btn-orcamento{
+            #header #menuNavbar .btn-primario{
                 color: var(--cor-secundaria);
                 border: 1px solid var(--cor-secundaria);
                 border-radius: 0;
             }
 
-            #header.branco #menuNavbar .btn-orcamento:hover{
+            #header.branco #menuNavbar .btn-primario:hover{
                 background-color: var(--cor-secundaria);
                 color: black;
                 border-radius: 0;
@@ -213,34 +203,44 @@
             }
         }
 
-        #hero{
-            width: 100%;
-            background-image: url(img/scene-construction-site-with-equipment.jpg);
-            background-position: center;
-            background-size: cover;
-            position: relative;
-        }
-
-        #hero .overlay{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.3);
-            z-index: 1;
-        }
 #Hero{
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url(../img/scene-construction-site-with-equipment.jpg);
+    background-image: url(../img/low-angle-perspective-tree-with-beautiful-canopy.jpg);
     background-position: center;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: teste 5s linear infinite alternate;
+    overflow: hidden;
+}
+
+#Hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/low-angle-perspective-tree-with-beautiful-canopy.jpg');
+    background-position: center;
+    background-size: cover;
+    z-index: 0;
+    
+    animation: kenBurns 20s ease-in-out infinite alternate;
+    will-change: transform;
+}
+
+@keyframes kenBurns {
+    0% {
+        /* Começa no tamanho original e levemente deslocada */
+        transform: scale(1.0) translate(0%, 0%);
+    }
+    100% {
+        /* Aproxima 15% e desliza para a esquerda/cima */
+        transform: scale(1.35) translate(-2%, -1.5%);
+    }
 }
 
 @keyframes teste {
@@ -301,13 +301,4 @@
 #Hero .container{
     position: relative;
     z-index: 2;
-}
-
-#header #menuNavbar .ativo{
-    opacity: .8;
-    cursor: default;
-}
-
-#header.branco #menuNavbar a.ativo {
-    opacity: .3 !important;
 }

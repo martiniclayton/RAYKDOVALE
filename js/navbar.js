@@ -3,13 +3,13 @@
 
         function atualizarHeader(){
             if(menuNavbar.classList.contains("show")){
-                NavPreto();
+                aplicarTemaEscuro();
                 btnToggle.classList.add("hidden");
             }else{
                 if(window.scrollY > 50){
-                    NavBranco();
+                    aplicarTemaClaro();
                 }else{
-                    NavPreto();
+                    aplicarTemaEscuro();
                 }
             }
         }
@@ -18,21 +18,21 @@
             atualizarHeader();
         })
 
-        function NavBranco(){
+        function aplicarTemaClaro(){
             header.classList.add("branco");
             logo.src = "img/logoPreto.png";
         }
 
-        function NavPreto(){
+        function aplicarTemaEscuro(){
             header.classList.remove("branco");
             logo.src = "img/logoBranco.png";
         }
 
         // window.addEventListener("scroll", ()=>{
         //     if(window.scrollY > 50){
-        //         NavBranco();
+        //         aplicarTemaClaro();
         //     } else{
-        //         NavPreto();
+        //         aplicarTemaEscuro();
         //     }
         // })
 
@@ -51,21 +51,18 @@
             btnToggle.classList.add("hidden");
             menuNavbar.classList.add("sombra");
             document.body.classList.add("travar");
-            NavPreto();
+            aplicarTemaEscuro();
         }
 
         function fecharToggle(){
             menuNavbar.classList.remove("show");
-            menuNavbar.style.boxShadow = "none";
+            menuNavbar.classList.remove("sombra");
             overlayToggle.classList.remove("show");
             btnToggle.classList.remove("hidden");
             menuNavbar.classList.remove("sombra");
             document.body.classList.remove("travar");
 
-            if(window.scrollY > 50){
-                NavBranco();
-            }
-
+            atualizarHeader();
         }
 
 
