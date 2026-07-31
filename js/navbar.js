@@ -1,3 +1,11 @@
+// imagem pre carregada
+
+const logoBranco = new Image();
+logoBranco.src = "img/logoBranco.png";
+
+const logoPreto = new Image();
+logoPreto.src = "img/logoPreto.png";
+ 
  const header = document.getElementById("header");
         const logo = document.getElementById("logo");
 
@@ -20,12 +28,12 @@
 
         function aplicarTemaClaro(){
             header.classList.add("branco");
-            logo.src = "img/logoPreto.png";
+            logo.src = logoPreto.src;
         }
 
         function aplicarTemaEscuro(){
             header.classList.remove("branco");
-            logo.src = "img/logoBranco.png";
+            logo.src = logoBranco.src;
         }
 
         // window.addEventListener("scroll", ()=>{
@@ -93,3 +101,12 @@
 
         //     positionInicial = positionAtual;
         // })
+
+
+        const links = document.querySelectorAll("#menuNavbar a");
+
+        links.forEach(item =>{
+            item.addEventListener("click", ()=>{
+                fecharToggle();
+            })
+        });
