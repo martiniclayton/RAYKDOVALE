@@ -1,52 +1,95 @@
-const header = document.getElementById("header");
+ const header = document.getElementById("header");
         const logo = document.getElementById("logo");
-        const btnToggle = document.getElementById("btn-toggle");
-        const menuNavbar = document.getElementById("menuNavbar");
 
-        function mostrarNavBranco(){
-            header.classList.add("branco");
-            logo.src = "img/logoPreto.png"
-        }
-
-        function mostrarNavTransparente(){
-            header.classList.remove("branco");
-            logo.src = "img/logoBranco.png"
+        function atualizarHeader(){
+            if(menuNavbar.classList.contains("show")){
+                NavPreto();
+                btnToggle.classList.add("hidden");
+            }else{
+                if(window.scrollY > 50){
+                    NavBranco();
+                }else{
+                    NavPreto();
+                }
+            }
         }
 
         window.addEventListener("scroll", ()=>{
-            if(scrollY > 50){
-                mostrarNavBranco();
-            } else{
-                if(!navAberto){
-                    mostrarNavTransparente();
-                }
-            }
-            
+            atualizarHeader();
         })
 
-        btnToggle.addEventListener("click", btnToggleClick);
-
-        let navAberto = false;
-
-        function btnToggleClick(){
-
-            if(navAberto){
-                if(window.scrollY < 50){
-                    mostrarNavTransparente();
-                }
-                menuNavbar.classList.remove("menu-opacity")
-                navAberto = false;
-            } else{
-                if(scrollY < 50){
-                    mostrarNavBranco();
-                }
-                menuNavbar.classList.add("menu-opacity")
-                navAberto = true;
-            }
+        function NavBranco(){
+            header.classList.add("branco");
+            logo.src = "img/logoPreto.png";
         }
 
-const rect = logo.getBoundingClientRect();
-        console.log("Distância do topo:", rect.top);
-console.log("Distância da esquerda:", rect.left);
-console.log("Largura da logo:", rect.width);
-console.log("Altura da logo:", rect.height);
+        function NavPreto(){
+            header.classList.remove("branco");
+            logo.src = "img/logoBranco.png";
+        }
+
+        // window.addEventListener("scroll", ()=>{
+        //     if(window.scrollY > 50){
+        //         NavBranco();
+        //     } else{
+        //         NavPreto();
+        //     }
+        // })
+
+        const btnToggle = document.getElementById("btn-toggle");
+        const menuNavbar = document.getElementById("menuNavbar");
+        const overlayToggle = document.getElementById("overlayToggle");
+        const btnToggleMenu = document.getElementById("btn-toggleMenu");
+
+
+        btnToggle.addEventListener("click", abrirToggle);
+        btnToggleMenu.addEventListener("click", fecharToggle);
+
+        function abrirToggle(){
+            menuNavbar.classList.toggle("show");
+            overlayToggle.classList.toggle("show");
+            btnToggle.classList.add("hidden");
+            menuNavbar.classList.add("sombra");
+            document.body.classList.add("travar");
+            NavPreto();
+        }
+
+        function fecharToggle(){
+            menuNavbar.classList.remove("show");
+            menuNavbar.style.boxShadow = "none";
+            overlayToggle.classList.remove("show");
+            btnToggle.classList.remove("hidden");
+            menuNavbar.classList.remove("sombra");
+            document.body.classList.remove("travar");
+
+
+        }
+
+
+        /// evento fechar no click
+
+        window.addEventListener("click",(e)=>{
+            if(!menuNavbar.contains(e.target) && !btnToggle.contains(e.target) && menuNavbar.classList.contains("show")){
+                fecharToggle();
+            }
+        })
+
+        window.addEventListener("keydown", (e)=>{
+            if(e.key === "Escape" && menuNavbar.classList.contains("show")){
+                fecharToggle();
+            }
+        })
+
+        // let positionInicial = window.scrollY;
+
+        // window.addEventListener("scroll", ()=>{
+        //     let positionAtual = window.scrollY;
+
+        //     let diferenca = Math.abs(positionAtual - positionInicial);
+
+        //     if(diferenca > 1){
+        //         fecharToggle();
+        //     }
+
+        //     positionInicial = positionAtual;
+        // })

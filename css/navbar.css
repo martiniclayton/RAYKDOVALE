@@ -1,78 +1,90 @@
-        :root{
-            --sombra-caixas: 0 0 8px rgba(0, 0, 0, 0.4);
-            --cor-principal: white;
+:root{
+            --cor-primaria: white;
             --cor-secundaria: black;
         }
 
+        body.travar{
+            overflow: hidden;
+        }
+
+        button:focus-visible, a:focus-visible{
+            border: 1px solid rgba(0, 0, 0, 0.4);
+            box-shadow: none !important;
+            font-weight: bold;
+        }
+        .divLogoFecharMenu{
+            display: flex;
+            justify-content: space-between;
+        }
         #header{
-            position: fixed !important;
+            position: fixed;
             width: 100%;
             top: 0;
-            box-shadow: var(--sombra-caixas);
             background-color: transparent;
-            transition: .4s ease;
-            z-index: 999 !important;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            transition: .3s ease;
+
+            animation: entradaheader .8s ease;
         }
 
-        #menuNavbar{
-            opacity: 0;
-        }
-
-        @media (min-width: 992px) {
-            #menuNavbar{
-                opacity: 1;
+        @keyframes entradaheader {
+            from{
+                top: -100%;
+            }
+            to{
+                top: 0;
             }
         }
 
-        #menuNavbar.menu-opacity{
-            opacity: 1;
+        #header #menuNavbar a{
+            color: var(--cor-primaria);
         }
 
-        #header #menuNavbar a{
-            color: var(--cor-principal);
-            transition: .3s ease;
+        #header #menuNavbar a.ativo{
+            opacity: .7;
+            cursor: default;
         }
 
         #header #menuNavbar a:hover{
+            opacity: .7;
         }
 
-        #header #menuNavbar button{
-            border: 1px solid var(--cor-principal);
-            color: var(--cor-principal);
+
+        #header #menuNavbar .btn-orcamento{
+            color: var(--cor-primaria);
+            border: 1px solid var(--cor-primaria);
             border-radius: 0;
         }
 
-        #header #menuNavbar button:hover{
-            background-color: var(--cor-principal);
-            color: var(--cor-secundaria);
+        #header #menuNavbar .btn-orcamento:hover{
+            background-color: var(--cor-primaria);
+            color: black;
+            border-radius: 0;
         }
 
         #header.branco{
-            background-color: var(--cor-principal);
+            background-color: var(--cor-primaria);
         }
 
         #header.branco #menuNavbar a{
             color: var(--cor-secundaria);
         }
 
-        #header.branco #menuNavbar button{
-            border: 1px solid var(--cor-secundaria);
+
+        #header.branco #menuNavbar .btn-orcamento{
             color: var(--cor-secundaria);
+            border: 1px solid var(--cor-secundaria);
         }
 
-        #header.branco #menuNavbar button:hover{
+        #header.branco #menuNavbar .btn-orcamento:hover{
             background-color: var(--cor-secundaria);
-            color: var(--cor-principal);
-        }
-
-        @media (max-width: 450px) {
-            #logo{
-                width: 200px;
-            }
+            color: var(--cor-primaria);
+            border-radius: 0;
         }
 
         .navbar-toggler{
-            border-color: var(--cor-principal) !important;
+            border-color: var(--cor-primaria);
         }
 
         .navbar-toggler:focus{
@@ -80,17 +92,144 @@
         }
 
         .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
 
         #header.branco .navbar-toggler{
-            border-color: var(--cor-secundaria) !important;
+            border-color: var(--cor-secundaria);
         }
 
         #header.branco .navbar-toggler-icon{
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
 
+        #logoToggle{
+            display: none;
+        }
+
+        #fecharToggle{
+            display: none;
+        }
+
+        .hidden{
+            display: none;
+        }
+
+        @media (max-width: 900px) {
+            #logoToggle{
+                display: block;
+            }
+            #overlayToggle{
+                display: none;
+                background-color: rgba(0, 0, 0, 0.6);
+                position: absolute;
+                opacity: 0;
+                z-index: 3;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                transition: .2s ease-out;
+            }
+            #overlayToggle.show{
+                display: block;
+                opacity: 1;
+            }
+            #menuNavbar{
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                max-width: 400px;
+                height: 100vh;
+                padding: 19px 29px;
+                transform: translateX(-100%);
+                transition: transform 0.3s cubic-bezier(0.1, 0.9, 0.2, 1);
+        
+                /* 2. ACELERAÇÃO DE HARDWARE: Força a GPU a processar a     animação */
+                will-change: transform;
+                display: block;
+                background-color: var(--cor-primaria);
+                z-index: 0;
+            }
+            #menuNavbar.sombra{
+                box-shadow: 5px 0 8px rgba(0, 0, 0, 0.4);
+            }
+            #menuNavbar.show{
+                transform: translateX(0%);
+            }
+
+            #fecharToggle{
+                position: absolute;
+                right: 10px;
+                display: block;
+            }
+            #btn-toggleMenu{
+                width: 30px;
+                font-size: 20px;
+                cursor: pointer;
+                text-align: center;
+                border-color: var(--cor-secundaria);
+            }
+
+            #btn-toggleMenu .navbar-toggler-icon {
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+            }
+            #header{
+            }
+
+            #header #menuNavbar a{
+                color: var(--cor-secundaria);
+            }
+
+            #header #menuNavbar a.ativo{
+                opacity: .7;
+                cursor: default;
+            }
+
+            #header #menuNavbar a:hover{
+                opacity: .7;
+            }
+
+            #header #menuNavbar .btn-orcamento{
+                color: var(--cor-secundaria);
+                border: 1px solid var(--cor-secundaria);
+                border-radius: 0;
+            }
+
+            #header.branco #menuNavbar .btn-orcamento:hover{
+                background-color: var(--cor-secundaria);
+                color: black;
+                border-radius: 0;
+            }
+        }
+
+        @media (max-width: 450px) {
+            #logo{
+                width: 200px;
+            }
+            #menuNavbar{
+                box-shadow: none;
+            }
+        }
+
+        #hero{
+            width: 100%;
+            background-image: url(img/scene-construction-site-with-equipment.jpg);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+
+        #hero .overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
 #Hero{
     position: relative;
     width: 100%;
@@ -164,8 +303,11 @@
     z-index: 2;
 }
 
-.ativo{
-    border-bottom: 1px solid white;
+#header #menuNavbar .ativo{
+    opacity: .8;
+    cursor: default;
 }
 
-
+#header.branco #menuNavbar a.ativo {
+    opacity: .3 !important;
+}
