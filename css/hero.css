@@ -1,14 +1,18 @@
+:root{
+    --cor-principal: white;
+    --cor-secundaria: black;
+    --sombra: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
 #Hero{
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url(../img/low-angle-perspective-tree-with-beautiful-canopy.jpg);
-    background-position: center;
-    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    text-shadow: var(--sombra);
 }
 
 #Hero::before {
@@ -18,7 +22,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../img/low-angle-perspective-tree-with-beautiful-canopy.jpg');
+    background-image: url('../img/heavy-excavator-digging-day-light.jpg');
     background-position: center;
     background-size: cover;
     z-index: 0;
@@ -36,20 +40,28 @@
     }
 }
 
-#Hero .overlay{
+#Hero::after{
+    content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
     z-index: 1;
 }
 
 #tittle-Hero{
     z-index: 998;
     color: white;
-    width: 600px;
+    max-width: 600px;
+    width: 100%;
+}
+
+#tittle-Hero h1{
+    line-height:1.1;
+}
+
+#tittle-Hero p{
+    max-width:550px;
+    margin:25px 0;
 }
 
 .animacaoEntrada{
@@ -73,28 +85,70 @@
 
 #btnA-hero{
     width: 150px;
-    padding: 10px;
-    background-color: white;
-    color: black;
-    border: 1px solid white;
-    transition: .3s ease;
+    background-color: var(--cor-principal);
+    color: var(--cor-secundaria);
+    border: 1px solid var(--cor-principal);
+    transition: .4s ease;   
+    height: 55px;
+    font-weight: 600;
+    border-radius: 2px;
 }
+
+#btnA-hero:hover{
+    background-color: rgba(255, 255, 255, 0.4);
+    color: var(--cor-principal);
+    border-color: var(--cor-principal);
+    transform: translateY(-2px);
+}
+
 
 #btnB-hero{
     width: 150px;
-    padding: 10px;
     background-color: transparent;
-    transition: .3s ease;
+    transition: .4s ease;
     color: white;
     border: 1px solid white;
+    height:55px;
+    font-weight:600;
+    border-radius:2px;
 }
 
-#btnA-hero:hover, #btnB-hero:hover{
-    background-color: var(--cor-principal);
-    color: var(--cor-secundaria);
+#btnB-hero:hover{
+    background-color: rgba(255, 255, 255, 0.4);
+    color: var(--cor-principal);
+    border-color: var(--cor-principal);
+    transform: translateY(-2px);
 } 
+
 
 #Hero .container{
     position: relative;
     z-index: 2;
+
+    animation: heroFade .9s ease ;
+}
+
+@keyframes heroFade {
+    from{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    #tittle.Hero{
+        text-align: center;
+    }
+    #tittle.Hero h1{
+        font-size:2.5rem;
+    }
+    .centralizar{
+        display: flex ;
+        justify-content: center ;
+        text-align: center ;
+    }
 }
