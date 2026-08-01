@@ -1,6 +1,8 @@
 :root{
             --cor-primaria: white;
             --cor-secundaria: black;
+             --cor-hover: rgba(239, 198, 121, .4);
+
         }
 
         body.travar{
@@ -58,8 +60,8 @@
         }
 
         #header #menuNavbar .btn-primario:hover{
-            background-color: var(--cor-primaria);
-            color: black;
+            background-color: var(--cor-hover);
+            color: var(--cor-primaria);
             border-radius: 0;
         }
 
