@@ -1,4 +1,6 @@
 :root{
+    --cor-principal: white;
+    --cor-secundaria: black;
     --cor-detalhes: #efc679;
 }
 *{
@@ -8,7 +10,105 @@
     background-color: white;
 }
 
+.container-cards{
+    position: relative;
+    display: flex;
+    gap: 10px;
+    margin: 40px 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+    animation: dicaScroll 2.5s ease-in-out 1s 1;
+}
+
+.wrapper-cards{
+    position: relative;
+}
+
+.icone-scroll-dica{
+    position: absolute;
+    right: 12px;
+    top: 35%;
+    color: var(--cor-secundaria);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    pointer-events: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease;
+    animation: pulsarindicador 1.5s infinite ease-in-out;
+    opacity: 1;
+}
+
+.icone-scroll-dica.sair{
+    opacity: 0;
+}
+
+@keyframes pulsarindicador {
+    0%, 100%{ transform: translateX(-50%) translateX(0);}
+    50%{transform: translateY(0%) translateY(0px);}
+}
+
+.container-cards {
+    /* Regra padrão moderna (Chrome, Edge, Firefox) */
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent; /* [cor da barra] [cor do fundo] */
+}
+
+/* Personalização fina para navegadores WebKit (Chrome/Safari) */
+.container-cards::-webkit-scrollbar {
+    height: 4px; /* Altura da barra horizontal */
+}
+
+.container-cards::-webkit-scrollbar-track {
+    background: transparent; /* Fundo invisível */
+}
+
+.container-cards::-webkit-scrollbar-thumb {
+    background-color: #ccc; /* Cor do indicador */
+    border-radius: 10px; /* Pontas arredondadas */
+}
+
+.container-cards > * {
+    /* Garante que o card não encolha no mobile */
+    flex: 0 0 200px; 
+    scroll-snap-align: start;
+}
+
+@media (min-width: 768px) {
+    .container-cards{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        overflow-x: visible;
+        max-width: 100%;
+    }
+    .container-cards > * {
+        flex: initial;
+    }
+    .icone-scroll-dica{
+        display: none;
+    }
+}
+
+@keyframes dicaScroll {
+    0% {
+        scroll-position-x: 0;
+        transform: translateX(0);
+    }
+    30% {
+        transform: translateX(-40px); /* Desloca os cards um pouco para a esquerda */
+    }
+    60% {
+        transform: translateX(0); /* Volta para a posição original */
+    }
+}
+
 .card{
+    width: 100%;
     height: 150px;
     background-color: #F7F7F7;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
