@@ -3,26 +3,23 @@
     --cor-secundaria: black;
     --cor-detalhes: #efc679;
 }
-*{
-}
-
-#Serviçoes{
-    background-color: white;
-}
 
 .container-cards{
     position: relative;
     display: flex;
     gap: 10px;
-    margin: 40px 0;
+    margin: 5px 0;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding-bottom: 10px;
     animation: dicaScroll 2.5s ease-in-out 1s 1;
+
 }
 
 .wrapper-cards{
     position: relative;
+    margin-top: 50px;
+    border-radius: 20px;
 }
 
 .icone-scroll-dica{
@@ -79,6 +76,10 @@
     scroll-snap-align: start;
 }
 
+.container-cards i{
+    color: rgba(0, 0, 0, 0.4);
+}
+
 @media (min-width: 768px) {
     .container-cards{
         display: grid;
@@ -108,73 +109,25 @@
 }
 
 .card{
+    position: relative;
     width: 100%;
     height: 150px;
-    background-color: #F7F7F7;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+    background: var(--cor-principal);
+    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
     margin-bottom: 30px;
     border: none;
     transition: 0.3s ease;
     padding: 20px;
     display: flex;
     justify-content: end;
-    border: 1px solid #F7F7F7;
     flex-direction: column;
+    color: var(--cor-secundaria);
+    white-space: pre-line;
 }
 
-.card2{
-    height: 150px;
-    background-color: white;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
-    margin-bottom: 30px;
-    transition: 0.3s ease;
-    padding: 20px;
-    display: flex;
-    justify-content: end;
-    border: 1px solid white;
-    flex-direction: column;
+@media (max-width: 768px) {
 }
-
-.card2:hover{
-    border: 1px solid #efc679;
-    transform: scaleY(1.20);
-}
-
-.card:hover{
-    transform: translateY(-3px);
-    box-shadow: 0px 8px 8px rgba(239, 198, 121, 0.4);
-}
-
-.h2{
-    background: linear-gradient(90deg, #efc679, #10100f);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-    font-size: 25px;
-}
-
-#sub-tittle{
-    font-size: 40px;
-    line-height: 1;
-}
-
-.btn-nossos-servicos{
-    background-color: black;
-    padding: 5px;
-    color: white;
-    width: 150px;
-    border: 1px solid #10100f;
-    border-radius: 5px;
-    transition: .3s ease;
-}
-
-.btn-nossos-servicos:hover{
-    background-color: white;
-    color: black;
-}
-
-
 .card i{
     position: absolute;
     top: 20px;
@@ -185,3 +138,4 @@
 .card:hover i{
     color: #efc679;
 }
+

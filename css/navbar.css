@@ -53,13 +53,13 @@
         }
 
 
-        #header #menuNavbar .btn-primario{
+        #header #menuNavbar .btn-nav{
             color: var(--cor-primaria);
             border: 1px solid var(--cor-primaria);
             border-radius: 0;
         }
 
-        #header #menuNavbar .btn-primario:hover{
+        #header #menuNavbar .btn-nav:hover{
             background-color: var(--cor-hover);
             color: var(--cor-primaria);
             border-radius: 0;
@@ -75,12 +75,12 @@
         }
 
 
-        #header.branco #menuNavbar .btn-primario{
+        #header.branco #menuNavbar .btn-nav{
             color: var(--cor-secundaria);
             border: 1px solid var(--cor-secundaria);
         }
 
-        #header.branco #menuNavbar .btn-primario:hover{
+        #header.branco #menuNavbar .btn-nav:hover{
             background-color: var(--cor-secundaria);
             color: var(--cor-primaria);
             border-radius: 0;
@@ -183,13 +183,13 @@
                 color: var(--cor-secundaria);
             }
 
-            #header #menuNavbar .btn-primario{
+            #header #menuNavbar .btn-nav{
                 color: var(--cor-secundaria);
                 border: 1px solid var(--cor-secundaria);
                 border-radius: 0;
             }
 
-            #header.branco #menuNavbar .btn-primario:hover{
+            #header.branco #menuNavbar .btn-nav:hover{
                 background-color: var(--cor-secundaria);
                 color: black;
                 border-radius: 0;
