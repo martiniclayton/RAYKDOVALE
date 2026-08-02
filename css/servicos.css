@@ -127,6 +127,9 @@
 }
 
 @media (max-width: 768px) {
+    .card{
+    }
+    
 }
 .card i{
     position: absolute;
