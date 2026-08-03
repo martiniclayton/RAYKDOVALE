@@ -64,3 +64,16 @@
         font-size: 29.6923px;
     }
 }
+
+.fadeUp{
+    animation: fadeUp 1s ease-in;
+}
+
+@keyframes fadeUp {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
