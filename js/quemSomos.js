@@ -1,6 +1,6 @@
 const cards = [
-    {numero: "30+", descrição: "Anos de experiências"},
-    {numero: 52, descrição: "Projetos concluídos"},
+    {numero: "30+", descrição: "Anos de experiência"},
+    {numero: 52, descrição: "Projetos entregues"},
     {numero: "15.000 m²", descrição: "Área Construída"},
     {numero: "100%", descrição: "Prazos Cumpridos"}
 ]
@@ -15,7 +15,7 @@ function atualizarCardsQuemSomos(){
     cards.map(card =>
         `
         <div class="card-quem-somos">
-            <h1>${card.numero}</h1>
+            <h3>${card.numero}</h3>
             <p>${card.descrição}</p>
         </div>
         `
