@@ -77,3 +77,11 @@
         opacity: 1;
     }
 }
+
+@media (max-width: 768px) {
+    .centralizar{
+        display: flex ;
+        justify-content: center ;
+        text-align: center ;
+    }
+}
