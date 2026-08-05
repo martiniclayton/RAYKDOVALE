@@ -6,9 +6,7 @@
 }
 
 #projetos .header-projetos{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
 }
 
 #projetos .header-projetos a{
@@ -21,15 +19,65 @@
     font-size: 1.5rem;
 }
 
-#projetos .card-projetos{
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    border-radius: 15px;
-    overflow: hidden;
+#projetos #container-cards-projetos{
+    display: flex;
+    position: relative;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    align-items: stretch !important;
+    justify-content: flex-start;
+
 }
+
+#projetos .card-projetos{
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    scroll-snap-align: start;
+    overflow: hidden;
+    padding: 0;
+    margin-bottom: 20px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 80%;
+}
+
+#projetos .card-projetos h2{
+}
+
+@media (min-width: 768px) {
+    #projetos #container-cards-projetos{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto 1fr auto !important;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        overflow-x: visible;
+        scroll-snap-type: none;
+    }
+    #projetos .card-projetos{
+        display: grid;
+        grid-row: span 3 !important;
+        grid-template-rows: subgrid !important;
+        width: 100%;
+    }
+    #projetos .header-projetos{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
 
 #projetos .card-projetos .card-img-projetos{
     overflow: hidden;
     position: relative;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    grid-row: 1;
 }
 
 #projetos .card-projetos .card-img-projetos .overlay-card{
@@ -61,5 +109,66 @@
 }
 
 #projetos .card-projetos .desc-card-projetos{
+    display: grid !important;
+    grid-row: 2/4 !important; /* Ocupa a linha do Título e a do Local */
+    grid-template-rows: subgrid !important;
     padding: 20px;
+    gap: 15px;
+}
+
+.desc-card-projetos .tituloDescricao{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.desc-card-projetos .tituloDescricao h2{
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    width: 10ch;
+}
+
+.desc-card-projetos p {
+    /* Mínimo de ~13px (0.85rem), escala com a tela (1.2vw), Máximo de 16px (1rem) */
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
+    line-height: 1.4; /* Melhora a leitura quando o texto quebra linha */
+}
+
+/* Rótulos em destaque (ex: "Descrição:", "Prazo:", "Local:") */
+.desc-card-projetos p strong {
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
+}
+
+.desc-card-projetos .demaisdesc{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+
+.container-card{
+    display: flex;
+    position: relative;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+
+}
+
+#status-obra{
+    position: absolute;
+    background-color: white;
+    top: 0;
+    right: 0;
+    margin: 20px 10px;
+    z-index: 2;
+    padding: 1px 20px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: white;
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    font-size: 15px;
 }
