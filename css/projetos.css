@@ -104,7 +104,12 @@
 
         .tituloDescCard h1{
             font-size: clamp(1.1rem, 2.5vw, 1.5rem );
-            max-width: 10ch;
+            line-height: 1.2;  /* Altura da linha */
+            height: 3.6rem;    /* line-height (1.2) x 2 linhas = 3.6rem */
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* Limita o texto a no máximo 2 linhas */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         .conteudo-card p, 
