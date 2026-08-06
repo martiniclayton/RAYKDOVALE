@@ -1,11 +1,13 @@
 const projetos = [
     {
-        imgProjeto: "img/female-engineers-working.jpg", 
+        imgProjeto: "img/modern-city-construction-site.jpg", 
         nomeProjeto: "Galpão Logístico", 
         descricao: "Adaptação de estrutura metálica, piso industrial e pátio de manobra.", 
         prazo: "6 meses", 
         localProjeto: "Catimbau — Buíque, PE",
-        status: "Andamento"
+        categoria: "Comercial",
+        icone: "building",
+        status: "Em andamento"
     },
     {
         imgProjeto: "img/heavy-excavator-digging-day-light.jpg", 
@@ -13,6 +15,8 @@ const projetos = [
         descricao: "Escavação, armação e concretagem de base em concreto armado para ETE.", 
         prazo: "45 dias", 
         localProjeto: "Guanumbi — Buíque, PE", 
+        categoria: "Comercial",
+        icone: "building",
         status: "Entregue"
     },
     {
@@ -21,6 +25,8 @@ const projetos = [
         descricao: "Obra completa desde a fundação ao acabamento fino em porcelanato.", 
         prazo: "10 meses", 
         localProjeto: "Arcoverde, PE", 
+        categoria: "Residencial",
+        icone: "house",
         status: "Entregue"
     },
 ];
@@ -33,20 +39,25 @@ function atualizarTelaCardsProjetos(){
 
     projetos.forEach(projetos =>{
         containerCardsProjetos.innerHTML += `
-                        <div class="card-projetos">
-                            <div class="card-img-projetos">
-                                <div class="overlay-card"></div>
-                                <div id="status-obra">${projetos.status}</div>
-                                <img src="${projetos.imgProjeto}" alt="">
-                            </div>
-                            <div class="desc-card-projetos">
-                                <div class="tituloDescricao">
-                                    <h2>${projetos.nomeProjeto}</h2>
-                                    <p><strong>Descrição: </strong>${projetos.descricao}</p>
+                        <div class="card-projetos" style="background-image: url(${projetos.imgProjeto});">
+                            <div class="conteudo-card">
+                                <div class="header-card">
+                                    <div>
+                                        <i class="fa-solid fa-${projetos.icone}"></i>
+                                        <button class="btn-tipo-obra">${projetos.categoria}</button>
+                                    </div>
+                                    <div>
+                                        <span class="status">${projetos.status}</span>
+                                    </div>
                                 </div>
-                                <div class="demaisdesc">
-                                    <p><strong>Prazo: </strong>${projetos.prazo}</p>
-                                    <p><strong>Local: </strong>${projetos.localProjeto}</p>
+                                <div class="tituloDescCard">
+                                    <h1>${projetos.nomeProjeto}</h1>
+                                    <p><strong>Descricao: </strong> ${projetos.descricao}</p>
+                                </div>
+                                <div class="demaisDescs">
+                                    <p><i class="fa-solid fa-calendar"></i>${projetos.prazo}</p>
+                                    <p><i class="fa-solid fa-location-dot"></i>${projetos.localProjeto}</p>
+                                    <button>Veja detalhes</button>
                                 </div>
                             </div>
                         </div>

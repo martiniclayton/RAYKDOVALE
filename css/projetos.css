@@ -1,176 +1,148 @@
-:root{
-    --cor-principal: white;
-    --cor-secundaria: black;
-    --cor-detalhes: ;
-    --cor-links: rgba(0, 0, 0, 0.8);
-}
+#projetos{
+            background: #F8F9FA;
+        }
 
-#projetos .header-projetos{
-    display: grid;
-}
+        .container-cards-projetos{
+            display: flex;
+            position: relative;
+            scroll-snap-type: x mandatory;
+            overflow-x: auto;
+            gap: 20px;
+        }
 
-#projetos .header-projetos a{
-    text-decoration: none;
-    color: var(--cor-links);
-    font-size: 1.1rem;
-}
+        
+        @media (min-width: 992px) {
+            .container-cards-projetos{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: auto 1fr auto;
+                gap: 50px;
+            }
+            .card-projetos{
+                flex: none;
+            }
+        }
 
-#projetos .header-projetos h1{
-    font-size: 1.5rem;
-}
-
-#projetos #container-cards-projetos{
-    display: flex;
-    position: relative;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 20px;
-    align-items: stretch !important;
-    justify-content: flex-start;
-
-}
-
-#projetos .card-projetos{
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    scroll-snap-align: start;
-    overflow: hidden;
-    padding: 0;
-    margin-bottom: 20px;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    flex: 0 0 80%;
-}
-
-#projetos .card-projetos h2{
-}
-
-@media (min-width: 768px) {
-    #projetos #container-cards-projetos{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto 1fr auto !important;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        overflow-x: visible;
-        scroll-snap-type: none;
-    }
-    #projetos .card-projetos{
-        display: grid;
-        grid-row: span 3 !important;
-        grid-template-rows: subgrid !important;
-        width: 100%;
-        max-width: 340px;
-        margin: 0 auto;
-    }
-    #projetos .header-projetos{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-}
+        @media (min-width: 768px) and (max-width: 991px) {
+            .container-cards-projetos{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto 1fr auto;
+                gap: 50px;
+            }
+            .card-projetos{
+                flex: none;
+            }
+        }
 
 
-#projetos .card-projetos .card-img-projetos{
-    overflow: hidden;
-    position: relative;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 16px;
-    grid-row: 1;
-}
+        .container-cards-projetos .card-projetos{
+            padding: 30px;
+            position: relative;
+            scroll-snap-align: start;
+            background-position: center;
+            background-size: cover;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex:  0 0 300px;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
 
-#projetos .card-projetos .card-img-projetos .overlay-card{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    transition: .3s ease;
-    z-index: 2;
-    opacity: 0;
-}
+        .container-cards-projetos .card-projetos::before{
+            border-radius: 15px;
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+            transition: .5s ease;
+        }
 
-#projetos .card-projetos .card-img-projetos:hover .overlay-card{
-    opacity: 1;
-}
+        .container-cards-projetos .card-projetos:hover::before{
+            background-color: rgba(0, 0, 0, 0.1);
+            backdrop-filter: none;
+        }
 
+        .container-cards-projetos .card-projetos .conteudo-card{
+            z-index: 1;
+            color: white;
+            position: relative;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
 
+        .header-card{
+            display: flex;
+            justify-content: space-between;
+        }
 
-#projetos .card-projetos img{
-    width: 100%;
-    transition: .3s ease-in;
-    position: relative;
-}
+        .header-card .btn-tipo-obra{
+            background-color: rgba(255, 255, 255, 0.3);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background-color: rgba(239, 198, 121, .6);
+            padding: 0 10px;
+            border-radius: 15px;
+            font-size: clamp(0.85rem, 1.2vw, 1rem);
+        }
 
-#projetos .card-projetos:hover img{
-    transform: scale(1.1);
-}
+        .tituloDescCard{
+            margin-top: 150px;
+            flex-grow: 1;
+        }
 
-#projetos .card-projetos .desc-card-projetos{
-    display: grid !important;
-    grid-row: 2/4 !important; /* Ocupa a linha do Título e a do Local */
-    grid-template-rows: subgrid !important;
-    padding: 20px;
-    gap: 15px;
-}
+        .demaisDescs{
+            margin-top: auto;
 
-.desc-card-projetos .tituloDescricao{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
+        }
 
-.desc-card-projetos .tituloDescricao h2{
-    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-    width: 10ch;
-}
+        .tituloDescCard h1{
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem );
+            max-width: 10ch;
+        }
 
-.desc-card-projetos p {
-    /* Mínimo de ~13px (0.85rem), escala com a tela (1.2vw), Máximo de 16px (1rem) */
-    font-size: clamp(0.85rem, 1.2vw, 1rem);
-    line-height: 1.4; /* Melhora a leitura quando o texto quebra linha */
-}
+        .conteudo-card p, 
+        .demaisDescs p {
+            font-size: clamp(0.85rem, 1.2vw, 1rem) !important;
+        }
 
-/* Rótulos em destaque (ex: "Descrição:", "Prazo:", "Local:") */
-.desc-card-projetos p strong {
-    font-size: clamp(0.85rem, 1.2vw, 1rem);
-}
+        .header-card{
+            font-size: clamp(0.9, 1.3vw, 1.1rem);
+        }
 
-.desc-card-projetos .demaisdesc{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
+        .demaisDescs p{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
+        .demaisDescs button{
+            width: 100%;
+            padding: 5px;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.4);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: .3s ease;
+        }
 
+        .demaisDescs button:hover{
+            background-color: rgba(0, 0, 0, 0.3);
+        }
 
-.container-card{
-    display: flex;
-    position: relative;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 16px;
+        .status{
+            background:rgba(0, 0, 0, 0.7);
+            padding: 5px 10px;
+            border-radius: 30px;
+            color: white;
+        }
 
-}
-
-#status-obra{
-    position: absolute;
-    background-color: white;
-    top: 0;
-    right: 0;
-    margin: 20px 10px;
-    z-index: 2;
-    padding: 1px 20px;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.4);
-    color: white;
-    backdrop-filter: blur(30px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    font-size: 15px;
-}
+        .status{
+            font-size: clamp(0.75rem, 1.2vw, 1rem);
+        }
