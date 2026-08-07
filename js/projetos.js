@@ -41,6 +41,8 @@ const projetos = [
     },
 ];
 
+const projetosIndex = projetos.slice(0, 3);
+
 
 const containerCardsProjetos = document.getElementById("container-cards-projetos");
 
@@ -48,7 +50,7 @@ function atualizarTelaCardsProjetos(){
     containerCardsProjetos.innerHTML = "";
     
 
-    projetos.forEach(projetos =>{
+    projetosIndex.forEach(projetos =>{
         containerCardsProjetos.innerHTML += `
                         <div class="card-projetos" style="background-image: url(${projetos.imgProjeto});">
                             <div class="conteudo-card">
@@ -75,30 +77,30 @@ function atualizarTelaCardsProjetos(){
         `
     })
 
-    containerCardsProjetos.innerHTML += `
-                        <div class="card-projetos" style="background-image: url(img/instagramBG2.png);">
-                            <div class="conteudo-card">
-                                <div class="header-card">
-                                    <div>
-                                        <i class="fa-brands fa-instagram fa-beat-fade"></i>
-                                        <button class="btn-tipo-obra">@RAYKDOVALE</button>
-                                    </div>
-                                    <div>
-                                        <span class="status">Siga-nos</span>
-                                    </div>
-                                </div>
-                                <div class="tituloDescCard">
-                                    <h1>Acompanhe Mais Obras no Instragram</h1>
-                                    <p>Conheça outras obras, reformas e projetos executados pela Rayk do Vale Construtora em nosso Instagram.</p>
-                                </div>
-                                <div class="demaisDescs">
-                                    <p><i class="fa-solid fa-calendar"></i>No prazo</p>
-                                    <p><i class="fa-solid fa-location-dot"></i>Projetos em diversas regiões</p>
-                                    <button>Ver perfil</button>
-                                </div>
-                            </div>
-                        </div>
-        `
+    // containerCardsProjetos.innerHTML += `
+    //                     <div class="card-projetos" style="background-image: url(img/instagramBG2.png);">
+    //                         <div class="conteudo-card">
+    //                             <div class="header-card">
+    //                                 <div>
+    //                                     <i class="fa-brands fa-instagram fa-beat-fade"></i>
+    //                                     <button class="btn-tipo-obra">@RAYKDOVALE</button>
+    //                                 </div>
+    //                                 <div>
+    //                                     <span class="status">Siga-nos</span>
+    //                                 </div>
+    //                             </div>
+    //                             <div class="tituloDescCard">
+    //                                 <h1>Acompanhe Mais Obras no Instragram</h1>
+    //                                 <p>Conheça outras obras, reformas e projetos executados pela Rayk do Vale Construtora em nosso Instagram.</p>
+    //                             </div>
+    //                             <div class="demaisDescs">
+    //                                 <p><i class="fa-solid fa-calendar"></i>No prazo</p>
+    //                                 <p><i class="fa-solid fa-location-dot"></i>Projetos em diversas regiões</p>
+    //                                 <button>Ver perfil</button>
+    //                             </div>
+    //                         </div>
+    //                     </div>
+    //     `
 }
 
 atualizarTelaCardsProjetos()

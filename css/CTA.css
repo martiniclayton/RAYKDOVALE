@@ -1,0 +1,37 @@
+:root{
+            --cor-principal: white;
+            --cor-secundaria: black;
+            --cor-rgbaP: rgba(255, 255, 255, 0.8);
+            --cor-hoverbuttn: rgba(255, 255, 255, 0.3);
+            
+        }
+        #CTA{
+            background: var(--cor-secundaria);
+            color: var(--cor-principal);
+            font-family: 'Inter', sans-serif;;
+        }
+        .container-CTA{
+            max-width: 500px;
+        }
+
+        .container-CTA  h1{
+            font-size: clamp(3rem, 4vw, 4.5rem);
+            font-weight: 600;
+        }
+
+        .container-CTA p{
+            color: var(--cor-rgbaP)
+
+        }
+        .container-CTA button{
+            width: 200px;
+            padding: 10px;
+            background-color: transparent;
+            color: var(--cor-principal);
+            border: 1px solid var(--cor-principal);
+            transition: .3s ease;
+        }
+
+        .container-CTA button:hover{
+            background-color: var(--cor-hoverbuttn)
+        }
