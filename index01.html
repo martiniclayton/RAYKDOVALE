@@ -101,6 +101,21 @@
             font-family: 'Inter', sans-serif;
             background-position: center;
             background-size: cover;
+            background-image: url(img/ChatGPT\ Image\ 8_08_2026\,\ 10_43_40.png);
+
+            animation: zoom linear both;
+
+            animation-timeline: view();
+            animation-range: 10% 80%;
+        }
+
+        @keyframes zoom {
+            from{
+                background-size: 100%;
+            }
+            to{
+                background-size: 110%;
+            }
         }
 
         #diferenciais::before{
@@ -108,7 +123,7 @@
             content: "";
             inset: 0;
             z-index: 1;
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(0, 0, 0, 0.2);
         }
 
         .container-cards-diferenciais{
