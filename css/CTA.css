@@ -15,7 +15,7 @@
         }
 
         .container-CTA  h1{
-            font-size: clamp(3rem, 4vw, 4.5rem);
+            font-size: clamp(2rem, 4vw, 4.5rem);
             font-weight: 600;
             text-transform: uppercase;
         }
