@@ -28,6 +28,7 @@
         /* seção serviços */
         #servicos{
             background: #F5F5F7;
+            background-color: white;
         }
 
         .titulo{
@@ -42,11 +43,21 @@
         }
 
         .container-card-servicos{
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            scroll-snap-type: x mandatory;
+            overflow-x: auto;
             gap: 20px;
-            align-items: stretch;
         }
+
+        @media (min-width: 768px) {
+            .container-card-servicos{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+                align-items: stretch;
+            }
+        }
+
         
         .container-card-servicos .card{
             width: 100%;
@@ -133,11 +144,11 @@
         </section>
 
         <section id="servicos">
-            <div class="container py-5">
+            <div class="container py-5 paddingMobile">
                 <div class="row">
                     <h1 class="titulo">Serviços</h1>
                 </div>
-                <div class="row">
+                <div class="row paddingMobile">
                     <div class="col-md-6">
                         <h1><span class="clarear-texto">Tudo o que sua obra precisa: </span><strong>construir, reformar e manter.</strong></h1>
                     </div>
