@@ -31,7 +31,7 @@
                 overflow-x: visible;
             }
             .card{
-                width: 300px;
+                width: 320px;
             }
         }
 
@@ -43,20 +43,51 @@
             padding: 20px;
             margin-bottom: 20px;
             scroll-snap-align: center;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            color: white;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        
+        .card::after{
+            position: absolute;
+            inset: 0;
+            content: "";
+            z-index: 1;
+            filter: grayscale();
+
+        }
+        
+        .card::before{
+            position: absolute;
+            inset: 0;
+            backdrop-filter: blur(5px);
+            z-index: 1;
+            content: "";
+            background: rgba(0, 0, 0, 0.4);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9) );
+            transition: .3s ease;
+        }
+
+        .card:hover::before{
+            backdrop-filter: none;
         }
 
         .titulo-card{
+            z-index: 2;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
             grid-row: 1;
             gap: 10px;
             height: 75px;
         }
 
         .titulo-card i{
-            font-size: 20px;
+
+            font-size: 30px;
+            margin-bottom: 10px;
             color: rgba(0, 0, 0, 0.4);
         }
 
@@ -68,17 +99,22 @@
         }
 
         .descricao-card{
-            text-align: center;
+            z-index: 2;
             grid-row: 2;
+
         }
 
         .btn-card{
+            z-index: 2;
             width: 100%;
             grid-row: 3;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: end;
         }
 
         .btn-card button{
+            color: white;
             border: none;
             background: none;
             font-size: 30px;
@@ -88,7 +124,7 @@
 
         @keyframes indicar {
             from{
-                transform: translateY(-10px);
+                transform: translateY(10px);
             }
             to{
                 transform: translateY(0);
@@ -114,37 +150,37 @@
             </div>
             <div class="row">
                 <div class="container-card py-5">
-                    <div class="card">
+                    <div class="card" style="background-image: url(img/bghe.jpg);">
                         <div class="titulo-card">
                             <i class="fa-solid fa-hard-hat amarelo"></i>
                             <h5>Construção</h5>
                         </div>
                         <div class="descricao-card">
-                            <p>Execução especializada de projetos residenciais e institucionais com alto padrão técnico, rigor no controle de prazos e eficiência logística na região.</p>
+                            <p>Gestão completa da sua obra, do projeto ao acabamento.</p>
                         </div>
                         <div class="btn-card">
                             <button><i class="fa-solid fa-chevron-down"></i></button>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card" style="background-image: url(img/reforma.jpg);">
                         <div class="titulo-card">
                             <i class="fa-solid fa-house-chimney-crack amarelo"></i>
                             <h5>Reforma</h5>
                         </div>
                         <div class="descricao-card">
-                            <p>Modernização, ampliação e renovação estrutural e estética de ambientes com planejamento detalhado e acabamento refinado.</p>
+                            <p>Elétrica, Hidráulica, Pintura, Telhados, Ar-Condicionado e Reparos Diversos.</p>
                         </div>
                         <div class="btn-card">
                             <button><i class="fa-solid fa-chevron-down "></i></button>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card" style="background-image: url(img/manutencai.jpg);">
                         <div class="titulo-card">
                             <i class="fa-solid fa-screwdriver-wrench amarelo"></i>
                             <h5>Manutenção</h5>
                         </div>
                         <div class="descricao-card">
-                            <p>Serviços preventivos e corretivos para conservação de edificações, garantindo durabilidade, segurança e pleno funcionamento.</p>
+                            <p>Qualidade com rapidez, organização e o mínimo de incômodo possível.</p>
                         </div>
                         <div class="btn-card">
                             <button><i class="fa-solid fa-chevron-down"></i></button>
@@ -153,6 +189,7 @@
                 </div>
             </div>
         </div>
+        
     </section>
 
     
