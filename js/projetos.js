@@ -1,9 +1,19 @@
 const projetos = [
     {
+        imgProjeto: "img/obra01galpao.jpeg", 
+        nomeProjeto: "Construção de Galpão", 
+        descricao: "Execução da fundação e estrutura inicial de um novo galpão, com foco em segurança, resistência e qualidade em cada etapa da obra.", 
+        prazo: "Em andamento", 
+        localProjeto: "Inajá, PE",
+        categoria: "Comercial",
+        icone: "building",
+        status: "Em andamento"
+    },
+    {
         imgProjeto: "img/imgCardBradesco.png", 
         nomeProjeto: "Reforma da Agência Bradesco", 
         descricao: "Execução da troca do forro de gesso e impermeabilização completa do telhado.", 
-        prazo: "20 dias", 
+        prazo: "Em andamento", 
         localProjeto: "Buíque, PE",
         categoria: "Comercial",
         icone: "building",

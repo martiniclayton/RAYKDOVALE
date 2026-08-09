@@ -49,23 +49,38 @@
             flex:  0 0 300px;
             height: 100%;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
         }
-
+        
         .container-cards-projetos .card-projetos::before{
             border-radius: 15px;
             content: "";
             position: absolute;
             inset: 0;
             z-index: 0;
-            background-color: rgba(0, 0, 0, 0.3);
             transition: .5s ease;
-            filter: grayscale();
-            backdrop-filter: blur(5px);
+            isolation: isolate;
+            background-image: inherit;
+            background-position: center;
+            background-size: cover;     
+            filter: grayscale(100%);
         }
-            
+        
+        .container-cards-projetos .card-projetos::after{
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        
+        .container-cards-projetos .card-projetos:hover{
+            filter: none;
+        }
         .container-cards-projetos .card-projetos:hover::before{
             background-color: rgba(0, 0, 0, 0.1);
             backdrop-filter: none;
+            filter: grayscale(0%);
         }
 
         .container-cards-projetos .card-projetos .conteudo-card{
