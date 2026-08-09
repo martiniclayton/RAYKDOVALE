@@ -1,5 +1,6 @@
 #diferenciais{
-            background-color: rgba(239, 198, 121, .2);
+            background-color: rgba(0, 0, 0, 1);
+            color: white;
         }
         .diferenciais{
             display: flex;
@@ -7,11 +8,10 @@
         }
 
         .sub-titulo-sessao{
-            color: rgba(0, 0, 0, .4);
         }
 
         .rayk{
-            color: black;
+            color: white;
         }
 
         .lista-diferenciais{
@@ -22,8 +22,13 @@
             display: flex;
             gap: 25px;
             align-items: baseline;
-            padding: 15px 0;
+            padding: 20px 15px;
             border-bottom: 1px solid rgba(0,0,0,.15);
+            border: 1px solid rgba(255,255,255,.25);
+        }
+
+        .item-diferenciais:hover{
+            background: rgba(255,255,255,.15);
         }
 
         .item-diferenciais h3{
@@ -32,7 +37,7 @@
         }
         .item-diferenciais p{
             margin: 0;
-            color: rgba(0,0,0,.65)
+            color: rgba(255,255,255,.65)
         }
 
         .numero{
