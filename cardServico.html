@@ -42,11 +42,10 @@
             .card-servico{
                 width: 100%;
             }
-            .titulo{
-            }
         }
 
         .card-servico{
+            position: relative;
             display: grid;
             grid-template-rows: subgrid;
             grid-row: span 4;
@@ -56,11 +55,18 @@
             padding: 40px;
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
             scroll-snap-align: start;
+            border-radius: 14px;
             
+        }
+
+        .card-servico i{
+            font-size: 25px;
+            color: rgba(0, 0, 0, 0.4);
         }
 
         .card-servico .icone{
             grid-row: 1;
+            margin-bottom: 20px;
         }
         .card-servico .titulo{
             grid-row: 2;
@@ -112,6 +118,11 @@
             font-weight: 700;
             color: #eeaf3a;
             text-decoration: none;
+        }
+
+        .item{
+            padding: 15px;
+            border-top: 1px solid rgba(0, 0, 0, 0.4);
         }
     </style>
 
@@ -169,23 +180,29 @@
         <section id="servicos">
             <div class="container py-5 paddingMobile">
                 <div class="row paddingMobile">
-                    <div class="col-md-6">
-                        <h1 class="titulo-sessao">SERVIÇOS</h1>
-                        <h1>Oferecemos uma variedade de serviços para atender às suas necessidades!</h1>
-                    </div>
+                    <h1 class="titulo-sessao">SERVIÇOS</h1>
                 </div>
                 <div class="row paddingMobile">
                     <div class="col-md-6">
+                        <h1>Oferecemos uma variedade de serviços para atender às suas necessidades!</h1>
+                    </div>
+                    <div class="col-md-6">
                         <p>Atuamos em todas as etapas da construção civil, desde o planejamento até a entrega final da obra, garantindo qualidade, segurança e cumprimento de prazos.</p>
                     </div>
-                    <div class="col-md-6 text-end">
-                        <a class="ajustar" href="">Ver todos os serviços <i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+                <div class="row paddingMobile">
+                    <div class="row paddingMobile">
+                        <div class="col-md-6"></div>
+                        <div class="col-md-6 text-end">
+                            <a class="ajustar" href="">Ver todos os serviços <i class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
                     </div>
                 </div>
                 <div class="row py-5">
                     <div class="container-card-servicos">
                         <div class="card-servico">
                             <div class="icone">
+                                <i class="fa-solid fa-hard-hat"></i>
                                 Serviço
                             </div>
                             <div class="titulo">
@@ -204,6 +221,7 @@
 
                         <div class="card-servico">
                             <div class="icone">
+                                <i class="fa-solid fa-paint-roller"></i>
                                 Serviço
                             </div>
                             <div class="titulo">
@@ -222,6 +240,7 @@
 
                         <div class="card-servico">
                             <div class="icone">
+                                <i class="fa-solid fa-screwdriver-wrench"></i>
                                 Serviço
                             </div>
                             <div class="titulo">
@@ -235,6 +254,168 @@
                                 <a href="">Saiba mais
                                 </a>
                                 <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Construção -->
+        <section id="construção">
+            <div class="container py-5">
+                <div class="row paddingMobile">
+                    <div class="col-md-6">
+                        <div id="carouselConstrucao" class="carousel slide">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselConstrucao" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselConstrucao" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselConstrucao" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="img/bghe.jpg" class="d-block w-100" alt="Construção 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/reforma.jpg" class="d-block w-100" alt="Construção 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/manutencai.jpg" class="d-block w-100" alt="Construção 3">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselConstrucao" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselConstrucao" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Serviço 01</h5>
+                        <h1>Construção</h1>
+                        <p>Executamos obras residenciais e corporativas do alicerce à chave, com projeto executivo detalhado, cronograma auditado e equipe própria em todas as frentes.</p>
+                        <p>Cada etapa é medida e comprovada: fundação, estrutura, alvenaria, instalações e acabamento seguem o mesmo padrão de controle técnico.</p>
+
+                        <div class="items py-3">
+                            <div class="item">
+                                Casas e residências de alto padrão
+                            </div>
+                            <div class="item">
+                                Edifícios comerciais e galpões
+                            </div>
+                            <div class="item" style="border-bottom: 1px solid rgba(0, 0, 0, 0.4);">
+                                Gestão de cronograma e orçamento
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Reforma -->
+        <section id="reforma">
+            <div class="container py-5">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h5>Serviço 02</h5>
+                        <h1>Reforma</h1>
+                        <p>Transformamos e renovamos ambientes comerciais e residenciais com foco em eficiência, durabilidade e acabamento impecável.</p>
+                        <p>Cuidamos de todas as etapas operacionais, modernizando instalações elétricas, hidráulicas e de revestimento sem dor de cabeça.</p>
+                        
+                        <div class="items py-3">
+                            <div class="item">
+                                Reformas residenciais e comerciais completas
+                            </div>
+                            <div class="item">
+                                Atualização de instalações elétricas e hidráulicas
+                            </div>
+                            <div class="item" style="border-bottom: 1px solid rgba(0, 0, 0, 0.4);">
+                                Pintura, telhados, acabamentos e revestimentos
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="carouselReforma" class="carousel slide">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselReforma" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselReforma" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselReforma" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="img/reforma.jpg" class="d-block w-100" alt="Reforma 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/bghe.jpg" class="d-block w-100" alt="Reforma 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/manutencai.jpg" class="d-block w-100" alt="Reforma 3">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselReforma" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselReforma" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Manutenção -->
+        <section id="manutencao">
+            <div class="container py-5">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div id="carouselManutencao" class="carousel slide">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselManutencao" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselManutencao" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselManutencao" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="img/manutencai.jpg" class="d-block w-100" alt="Manutenção 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/reforma.jpg" class="d-block w-100" alt="Manutenção 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/bghe.jpg" class="d-block w-100" alt="Manutenção 3">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselManutencao" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselManutencao" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Serviço 03</h5>
+                        <h1>Manutenção</h1>
+                        <p>Garantimos a preservação, o funcionamento contínuo e a segurança das instalações da sua empresa ou residência com rapidez e organização.</p>
+                        <p>Serviços pontuais ou preventivos realizados por profissionais qualificados com o mínimo de interferência na sua rotina.</p>
+
+                        <div class="items py-3">
+                            <div class="item">
+                                Manutenção preditiva e preventiva
+                            </div>
+                            <div class="item">
+                                Reparos rápidos em hidráulica e elétrica
+                            </div>
+                            <div class="item" style="border-bottom: 1px solid rgba(0, 0, 0, 0.4);">
+                                Conservação e atendimento emergencial
                             </div>
                         </div>
                     </div>
