@@ -1,0 +1,42 @@
+#diferenciais{
+            background-color: rgba(239, 198, 121, .2);
+        }
+        .diferenciais{
+            display: flex;
+            justify-content: end;
+        }
+
+        .sub-titulo-sessao{
+            color: rgba(0, 0, 0, .4);
+        }
+
+        .rayk{
+            color: black;
+        }
+
+        .lista-diferenciais{
+            margin-left: auto;
+        }
+
+        .item-diferenciais{
+            display: flex;
+            gap: 25px;
+            align-items: baseline;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(0,0,0,.15);
+        }
+
+        .item-diferenciais h3{
+            margin: 0 0 8px;
+            font-size: 1.2rem;
+        }
+        .item-diferenciais p{
+            margin: 0;
+            color: rgba(0,0,0,.65)
+        }
+
+        .numero{
+            color: #efc679;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }

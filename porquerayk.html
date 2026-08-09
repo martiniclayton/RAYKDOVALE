@@ -21,153 +21,48 @@
 
 
     <style>
-        /* seção serviços */
-
-        .titulo-secundario{
-            font-size: 15px;
-            color: rgba(0, 0, 0, 0.5);
-            font-weight: bold;
-        }
-
-        .container-cards-servicos01{
-            display: flex;
-            scroll-snap-type: x mandatory;
-            overflow-x: auto;
-        }
-        
-        @media (max-width: 768px) {
-            .container-cards-servicos01{
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: auto 1fr auto;
-                gap: 20px;
-                align-items: stretch;
-            }
-        }
-        
-        .card-servicos01{
-            margin: auto;
-            display: grid;
-            grid-template-rows: subgrid;
-            grid-row: span 3;
-            padding: 30px;
-            max-width: 300px;
-            box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
-            transition: .3s ease;
-            min-width: 280px;
-        }
-
-        .card-servicos01:hover{
-            transform: translateY(-5px);
-            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
-        }
-
-        .titulo-card-servicos01{
-            position: relative;
-            grid-row: 1;
-        }
-        
-        .titulo-card-servicos01 h1{
-            font-size: clamp(1.125rem, 1.5vw, 1.5rem);
-        }
-
-        i{
-            position: relative;
-            font-size: 25px;
-            grid-row: 1;
-            color: rgba(0, 0, 0, 0.4)
-        }
-
-        .descricao-card-servicos01{
-            grid-row: 2;
-        }
-        .btn-card-servicos01{
-            grid-row: 3;
-        }
-
-        .btn-card-servicos01  button{
-            width: 100%;
-            padding: 5px;
-            background: transparent;
-            border: 1px solid black;
-        }
-
-
-        /* DIFERENCIAIS */
 
         #diferenciais{
-            position: relative;
-            background: black;
-            font-family: 'Inter', sans-serif;
-            background-position: center;
-            background-size: cover;
-
-            animation: zoom linear both;
-
-            animation-timeline: view();
-            animation-range: 10% 80%;
+            background-color: rgba(239, 198, 121, .2);
         }
-
-        @keyframes zoom {
-            from{
-                background-size: 100%;
-            }
-            to{
-                background-size: 110%;
-            }
-        }
-
-        #diferenciais::before{
-            position: absolute;
-            content: "";
-            inset: 0;
-            z-index: 1;
-            background-color: rgba(0, 0, 0, 0.2);
-        }
-
-        .container-cards-diferenciais{
-            position: relative;
-            z-index: 2;
-        }
-
-        .subtitulo{
-            position: relative;
-            z-index: 2;
-            font-size: 14px;
-            color: #9CA3AF;
-        }
-
-        .titulo{
-            position: relative;
-            z-index: 2;
-            font-size: clamp(2rem, 5vw + 1rem, 64px);
-            text-transform: uppercase;
-            max-width: 20ch;
-            color: white;
-            font-weight: bold;
-        }
-
-        .card-diferenciais{
-            background-color: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 30px;
-            color: white;
-            border-left: 0;
+        .diferenciais{
             display: flex;
-            z-index: 2;
-            flex-direction: column;
-            justify-content: space-between;
-            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+            justify-content: end;
         }
 
-        .card-diferenciais h5{
-            font-size: 18px;
+        .sub-titulo-sessao{
+            color: rgba(0, 0, 0, .4);
+        }
+
+        .rayk{
+            color: black;
+        }
+
+        .lista-diferenciais{
+            margin-left: auto;
+        }
+
+        .item-diferenciais{
+            display: flex;
+            gap: 25px;
+            align-items: baseline;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(0,0,0,.15);
+        }
+
+        .item-diferenciais h3{
+            margin: 0 0 8px;
+            font-size: 1.2rem;
+        }
+        .item-diferenciais p{
+            margin: 0;
+            color: rgba(0,0,0,.65)
+        }
+
+        .numero{
+            color: #efc679;
+            font-size: 1.1rem;
             font-weight: 700;
-        }
-
-        .card-diferenciais p{
-            font-size: 15px;
-            color: rgba(255, 255, 255, 0.8);
         }
 
     </style>
@@ -268,54 +163,47 @@
                     </div>
             </div>
         </section>
-
-        <section id="diferenciais" class="paddingMobile">
-            <div class="container py-5">
-                <div class="row py-5 paddingMobile">
-                    <h1 class="subtitulo">DIFERENCIAIS</h1>
-                    <H1 class="titulo">POR QUE A RAYK DO VALE</H1>
-                    <p>Mais do que construir, entregamos segurança, planejamento e qualidade em cada etapa.</p>
+        <section id="diferenciais">
+            <div class="container py-5 paddingMobile">
+                <div class="row paddingMobile">
+                    <div class="col-md-5 mb-5">
+                        <h6 class="titulo-sessao">DIFERENCIAIS</h6>
+                        <H1 class="sub-titulo-sessao">POR QUE A <span class="rayk">RAYK DO VALE</span></H1>
+                        <p>Mais do que construir, entregamos segurança, planejamento e qualidade em cada etapa.</p>
+                    </div>
+                    <div class="col-md-7 diferenciais">
+                        <div class="lista-diferenciais">
+                            <div class="item-diferenciais">
+                                <span class="numero"> 01</span>
+                                <div>
+                                    <h3>Qualidade na execução</h3>
+                                    <p>Materiais e execução acompanhados para garantir um resultado durável.</p>
+                                </div>
+                            </div>
+                            <div class="item-diferenciais">
+                                <span class="numero"> 02</span>
+                                <div>
+                                    <h3>Planejamento</h3>
+                                    <p>Cada etapa da obra é organizada para reduzir imprevistos e atrasos.</p>
+                                </div>
+                            </div>
+                            <div class="item-diferenciais">
+                                <span class="numero"> 01</span>
+                                <div>
+                                    <h3>Compromisso com prazos</h3>
+                                    <p>Acompanhamento constante do cronograma e evolução da obra.</p>
+                                </div>
+                            </div>
+                            <div class="item-diferenciais">
+                                <span class="numero"> 01</span>
+                                <div>
+                                    <h3>Atendimento próximo</h3>
+                                    <p>Comunicação clara e acompanhamento do cliente durante todo o projeto.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="row container-cards-diferenciais paddingMobile">
-                    <div class="col-md-3 card-diferenciais" style="border-left: 1px solid rgba(255, 255, 255, 0.3);">
-                        <h5>Qualidade na execução</h5>
-                        <p>Materiais e execução acompanhados para garantir um resultado durável.</p>
-                    </div>
-                    <div class="col-md-3 card-diferenciais">
-                        <h5>Planejamento</h5>
-                        <p>Cada etapa da obra é organizada para reduzir imprevistos e atrasos.</p>
-                    </div>
-                    <div class="col-md-3 card-diferenciais">
-                        <h5>Compromisso com prazos</h5>
-                        <p>Acompanhamento constante do cronograma e evolução da obra.</p>
-                    </div>
-                    <div class="col-md-3 card-diferenciais">
-                        <h5>Atendimento próximo</h5>
-                        <p>Comunicação clara e acompanhamento do cliente durante todo o projeto.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="CTA">
-            <div class="container py-5">
-                <div class="row text-center d-flex justify-content-center paddingMobile">
-                    <div class="container-CTA">
-                        <h1>Vamos construir seu projeto?</h1>
-                        <p>Nossa equipe técnica está pronta para analisar seu projeto arquitetônico e fornecer um orçamento detalhado com cronograma de execução.</p>
-                        <button class="">Solicitar Orçamento</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="oquefazemos"><!-- O que fazemos -->
-            <div class="container">
-
-            </div>
-        </section>
-        <section id="clientes"><!-- CLientes -->
-            <div class="container">
-
             </div>
         </section>
     </main>
