@@ -101,14 +101,43 @@
             flex-direction: column;
             font-size: 12px;
         }
-
-
+        
+        
         /* escopo */
         
         #escopo .container-card-apresentacao{
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: auto auto 1fr auto;
+            display: flex;
+            scroll-snap-type: x mandatory;
+            overflow-x: auto;
+            gap: 15px;
+        }
+
+        .container-card-apresentacao .card-apresentacao{
+            display: flex;
+            flex-direction: column;
+            flex: 0 0 300px;
+            cursor: pointer;
+        }
+
+        .container-card-apresentacao .card-apresentacao:hover i{
+            color: #c58612;
+        }
+
+        @media (min-width: 768px) {
+            #escopo .container-card-apresentacao{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: auto auto 1fr auto auto;
+                gap: 5px 20px;
+            }
+            .container-card-apresentacao .card-apresentacao{
+                display: grid;
+                margin: auto;
+                background-color: rgba(0, 0, 0, 0.02);
+                grid-template-rows: subgrid;
+                grid-row: span 5;
+                box-shadow: 0 0 1px rgba(0, 0, 0, 0.9);
+            }
         }
         
         @media (max-width: 768px) {
@@ -123,19 +152,78 @@
             }
         }
         
-        .container-card-apresentacao .card-apresentacao{
-            display: grid;
-            grid-template-rows: subgrid;
-            grid-row: span 3;
-            padding: 20px;
-            box-shadow: 0 0 1px rgba(0, 0, 0, 0.9);
-        }
 
         .container-card-apresentacao .card-apresentacao:hover{
-            background-color: rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 5px #c58612;
         }
 
 
+        .container-card-apresentacao .card-apresentacao .img-card{
+            position: relative;
+            height: 235px;
+            overflow: hidden;
+        }
+
+        .container-card-apresentacao .card-apresentacao .img-card img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .container-card-apresentacao .card-apresentacao .img-card::before{
+            position: absolute;
+            inset: 0;
+            content: "";
+            background-color: rgba(0, 0, 0, 0.4);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, .8) );
+        }
+
+        .container-card-apresentacao .card-apresentacao .titulo-card{
+            padding: 0 20px;
+            padding-top: 20px;
+        }
+
+        .container-card-apresentacao .card-apresentacao .titulo-card h4{
+            margin: 0;
+        }
+
+        .container-card-apresentacao .card-apresentacao .descricao-card{
+            padding: 0 20px;
+        }
+
+        .container-card-apresentacao .card-apresentacao .link-card{
+            padding: 0 20px;
+            padding-bottom: 20px;
+        } 
+
+        .container-card-apresentacao .card-apresentacao .link-card a{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 700;
+            text-decoration: none;
+            color: #c58612;
+        } 
+
+        .icone{
+            /* border: 1px solid #efc679; */
+            font-size: 24px;
+            color: rgba(0, 0, 0, 0.4);
+        }
+
+        .card-apresentacao h4{
+            font-size: clamp(1.1rem, 1.5vw + 0.5rem, 1.35rem);
+            line-height: 1.2;
+        }
+
+        .card-apresentacao p {
+            font-size: clamp(0.85rem, 0.8vw + 0.5rem, 0.95rem);
+            line-height: 1.4;
+            }
+        
+        .card-apresentacao li {
+            font-size: clamp(0.8rem, 0.6vw + 0.4rem, 0.9rem);
+            }
         /* frentes */
 
         #frentes .conteudo-frentes{
@@ -222,329 +310,110 @@
         <section id="escopo">
             <div class="container py-5 paddingMobile">
                 <div class="row paddingMobile">
-                    <h1>Soluções de engenharia para cada necessidade</h1>
+                    <h2 class="titulo-sessao">Frentes de Atuação</h2>
                 </div>
                 <div class="row paddingMobile">
+                    <div class="col-md-6">
+                        <p class="sub-titulo-sessao">Soluções completas para cada etapa do seu projeto</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>Da fundação à entrega das chaves, atuamos com engenharia de alto padrão em obras residenciais, comerciais e prediais.</p>
+                    </div>
+                </div>
+                <div class="row  py-5">
                     <div class="container-card-apresentacao">
+                        
+                        <!-- Card 1: Construção Civil -->
                         <div class="card-apresentacao">
-                            <div class="icone-card">
+                            <div class="img-card">
+                                <img src="img/obra01galpao.jpeg" width="100%" alt="">
+                            </div>
+                            <div class="titulo-card">
+                                <i class="fa-solid fa-helmet-safety icone"></i>
+                                <p>Serviço</p>
+                                <h4>Construção civil</h4>
+                            </div>
+                            <div class="descricao-card">
+                                <p>Execução completa de projetos residenciais, comerciais e industriais do início ao fim.</p>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li><strong>Principais:</strong> Fundações, alvenaria estrutural, concretagem e lajes.</li>
+                                </ul>
+                            </div>
+                            <div class="link-card">
+                                <a href="">Saiba mais <i class="fa-solid fa-right-long"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Reforma -->
+                        <div class="card-apresentacao">
+                            <div class="img-card">
                                 <img src="img/bghe.jpg" width="100%" alt="">
                             </div>
                             <div class="titulo-card">
-                                <span>Serviço</span>
-                                <h4>Construção civil</h4>
+                                <i class="fa-solid fa-paint-roller icone"></i>
+                                <p>Serviço</p>
+                                <h4>Reformas e Retrofit</h4>
                             </div>
                             <div class="descricao-card">
-                                <p>Execução completa de empreendimentos corporativos, industriais e residenciais</p>
-                            </div>
-                         </div>
-                         <div class="card-apresentacao">
-                            <div class="icone-card">
-                                <span>Serviço</span>
-                            </div>
-                            <div class="titulo-card">
-                                <h4>Manutenção predial</h4>
-                            </div>
-                            <div class="descricao-card">
-                                <p>Planos preventivos e corretivos para elétrica, hidráulica, fachadas e coberturas.</p>
-                            </div>
-                         </div>
-                         <div class="card-apresentacao">
-                            <div class="icone-card">
-                                <span>Serviço</span>
-                            </div>
-                            <div class="titulo-card">
-                                <h4>Reformas e retrofit</h4>
-                            </div>
-                            <div class="descricao-card">
-                                <p>Demolição, acabamentos, drywall, gesso e pintura com mínima interferência na operação.</p>
-                            </div>
-                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                                <p>Modernização de ambientes com foco em acabamento de alto padrão e otimização de layout.</p>
 
-        <section id="escopo">
-            <div class="container py-5 paddingMobile">
-                <div class="row paddingMobile">
-                    <h1 class="titulo-sessao">Escopo de Atuação</h1>
-                </div>
-                <div class="row paddingMobile">
-                    <div class="col-md-6">
-                        <h1 class="sub-titulo-sessao">Uma construtora para todo o ciclo de vida da sua edificação</h1>
-                    </div>
-                    <div class="col-md-6">
-                        <p>Do primeiro traço da fundação à manutenção anual do ativo, atendemos contratos corporativos e residenciais com o mesmo rigor técnico.</p>
-                    </div>
-                </div>
-                <div class="row py-5 paddingMobile">
-                    <div class="container-card-apresentacao">
+                            </div>
+                            <div>
+                                <ul>
+                                    <li><strong>Principais:</strong> Demolição controlada, drywall, revestimentos e pintura.</li>
+                                </ul>
+                            </div>
+                            <div class="link-card">
+                                <a href="">Saiba mais <i class="fa-solid fa-right-long"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Manutenção -->
                         <div class="card-apresentacao">
-                            <div class="icone-card">
-                                <span>Serviço</span>
+                            <div class="img-card">
+                                <img src="img/manutenção.jpeg" width="100%" alt="">
                             </div>
                             <div class="titulo-card">
-                                <h4>Construção civil</h4>
+                                <i class="fa-solid fa-screwdriver-wrench icone"></i>
+                                <p>Serviço</p>
+                                <h4>Manutenção Predial</h4>
                             </div>
                             <div class="descricao-card">
-                                <p>Execução completa de empreendimentos corporativos, industriais e residenciais</p>
+                                <p>Planos preventivos e corretivos para sistemas elétricos, hidráulicos e estruturais.</p>
+
                             </div>
-                         </div>
-                         <div class="card-apresentacao">
-                            <div class="icone-card">
-                                <span>Serviço</span>
+                            <div>
+                                <ul>
+                                    <li><strong>Principais:</strong> Sistemas elétricos, hidráulicos, fachadas e coberturas.</li>
+                                </ul>
                             </div>
-                            <div class="titulo-card">
-                                <h4>Manutenção predial</h4>
+                            <div class="link-card">
+                                <a href="">Saiba mais <i class="fa-solid fa-right-long"></i></a>
                             </div>
-                            <div class="descricao-card">
-                                <p>Planos preventivos e corretivos para elétrica, hidráulica, fachadas e coberturas.</p>
-                            </div>
-                         </div>
-                         <div class="card-apresentacao">
-                            <div class="icone-card">
-                                <span>Serviço</span>
-                            </div>
-                            <div class="titulo-card">
-                                <h4>Reformas e retrofit</h4>
-                            </div>
-                            <div class="descricao-card">
-                                <p>Demolição, acabamentos, drywall, gesso e pintura com mínima interferência na operação.</p>
-                            </div>
-                         </div>
-                         <div class="card-apresentacao">
-                            <div class="icone-card">
-                                <span>Serviço</span>
-                            </div>
-                            <div class="titulo-card">
-                                <h4>Combate a incêndio</h4>
-                            </div>
-                            <div class="descricao-card">
-                                <p>Projeto, instalação e adequação de sistemas de prevenção conforme normas do Corpo de Bombeiros.</p>
-                            </div>
-                         </div>
-                         <div class="card-apresentacao">
-                            <div class="icone-card">
-                                <span>Serviço</span>
-                            </div>
-                            <div class="titulo-card">
-                                <h4>Serviços industriais</h4>
-                            </div>
-                            <div class="descricao-card">
-                                <p>Hidrojateamento, sucção de resíduos, limpeza técnica e serralheria sob medida.</p>
-                            </div>
-                         </div>
-                         <div class="card-apresentacao">
-                            <div class="icone-card">
-                                <span>Serviço</span>
-                            </div>
-                            <div class="titulo-card">
-                                <h4>Gestão e segurança</h4>
-                            </div>
-                            <div class="descricao-card">
-                                <p>Documentação, ART, cronograma físico-financeiro e conformidade em SST no canteiro.</p>
-                            </div>
-                         </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </section>
-
-        <section id="frentes">
-            <div class="container py-5 paddingMobile">
-                <div class="row paddingMobile">
-                    <h1 class="titulo-sessao">QUATRO FRENTES</h1>
-                </div>
-                <div class="row paddingMobile">
-                    <div class="col-md-6">
-                        <h1 class="sub-titulo-sessao">Detalhamento técnico de cada pilar</h1>
-                    </div>
-                </div>
-                <div class="row py-5 paddingMobile">
-                    <div class="col-md-6">
-                        <img src="img/bghe.jpg" width="100%" alt="">
-                    </div>
-                    <div class="col-md-6 conteudo-frentes">
-                        <h1>Construção</h1>
-                        <p>Empreendimentos executados do movimento de terra à entrega das chaves, com controle tecnológico do concreto e acompanhamento diário de engenharia.</p>
-
-                        <div class="detalhes-frentes">
-                            <p>Alvenaria estrutural e de vedação</p>
-                            <p>Fundações profundas e rasas</p>
-                            <p>Concretagem e formas</p>
-                            <p>Alçamento e montagem de estruturas</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row py-5 paddingMobile">
-                    <div class="col-md-6 conteudo-frentes">
-                        <h1>Construção</h1>
-                        <p>Empreendimentos executados do movimento de terra à entrega das chaves, com controle tecnológico do concreto e acompanhamento diário de engenharia.</p>
-                        
-                        <div class="detalhes-frentes">
-                            <p>Alvenaria estrutural e de vedação</p>
-                            <p>Fundações profundas e rasas</p>
-                            <p>Concretagem e formas</p>
-                            <p>Alçamento e montagem de estruturas</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="img/bghe.jpg" width="100%" alt="">
-                    </div>
-                </div>
-                <div class="row py-5 paddingMobile">
-                    <div class="col-md-6">
-                        <img src="img/bghe.jpg" width="100%" alt="">
-                    </div>
-                    <div class="col-md-6 conteudo-frentes">
-                        <h1>Construção</h1>
-                        <p>Empreendimentos executados do movimento de terra à entrega das chaves, com controle tecnológico do concreto e acompanhamento diário de engenharia.</p>
-
-                        <div class="detalhes-frentes">
-                            <p>Alvenaria estrutural e de vedação</p>
-                            <p>Fundações profundas e rasas</p>
-                            <p>Concretagem e formas</p>
-                            <p>Alçamento e montagem de estruturas</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="construcao">
+        <section id="quem-somos" class="py-5">
             <div class="container">
-                <div class="row">
-                    <div class="container-frente">
-                        <div class="apresentar-frente">
-                            <h1>Construção</h1>
-                            <p>Empreendimentos executados do movimento de terra à entrega das chaves, com controle tecnológico do concreto e acompanhamento diário de engenharia.</p>
-                            <div class="fotos-frente">
-                                <div class="foto-frente-1">
-                                    <img src="img/bghe.jpg" width="100%" alt="">
-                                </div>
-                                <div class="foto-frente-2">
-                                    <img src="img/modern-city-construction-site.jpg" width="50%" alt="">
-                                </div>
-                            </div>
-                        </div>
+                <div class="row mt-5 paddingMobile">
+                    <div class="col-md-6">
+                        <h1 class="titulo-sessao">Quem Somos</h1>
+                        <p class="sub-titulo-sessao">Conheça a nossa empresa.</p>
                     </div>
+                    <div class="col-md-6">
+                        A <strong class="fontGrande">Rayk do Vale</strong> nasceu em 2023 unindo a experiência prática de mais de 30 anos no canteiro de obras com uma gestão técnica, moderna e transparente. Cuidamos do seu projeto do papel até a entrega das chaves.
+                    </div>
+                </div>
+                <div class="row mt-5 mb-5 paddingMobile">
+                    <div id="container-cards-quemSomos" class="row"></div>
                 </div>
             </div>
         </section>
-
-        <!-- <section id="pilares">
-            <div class="container py-5">
-                <div class="row">
-                    <h1 class="titulo-sessao">NOSSOS PILARES</h1>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <h1>Como estruturamos cada projeto</h1>
-                    </div>
-                    <div class="col-md-6">
-                        <p>Unimos gestão técnica rigorosa, planejamento de custos e execução eficiente para entregar obras residenciais, comerciais e industriais com total segurança.</p>
-                    </div>
-                </div>
-                <div class="container-cards-pilares py-5">
-                    <div class="card-pilar">
-                        <div class="head-card-pilar">
-                            <i class="fa-solid fa-helmet-safety"></i>
-                            <p>Do Planejamento ao Acabamento</p>
-                        </div>
-                        <div class="conteudo-card-pilar">
-                            <div>
-                                <div>
-                                    <p class="sub-titulo-conteudo-card-pilar">Serviço</p>
-                                    <h4>Construção</h4>
-                                </div>
-                                <div class="descricao-pilar">
-                                    <p>Execução completa de projetos de engenharia civil com rigor técnico, controle de orçamento, gestão de mão de obra qualificada e entrega garantida no prazo.</p>
-                                </div>
-                            </div>
-                            <div>
-                                <button>Residencial</button>
-                                <button>Comercial</button>
-                                <button>Galpões</button>
-                            </div>
-                        </div>
-                        <div class="rodape-card-pilar">
-                            <div class="indicadores">
-                                <span>50+</span>
-                                <span>Obras Executadas</span>
-                                
-                            </div>
-                            <div>
-                                <button>Saiba Mais</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-pilar">
-                        <div class="head-card-pilar">
-                            <i class="fa-solid fa-paint-roller"></i>
-                            <p>Renovação e Valorização</p>
-                        </div>
-                        <div class="conteudo-card-pilar">
-                            <div>
-                                <div>
-                                    <p class="sub-titulo-conteudo-card-pilar">Serviço</p>
-                                    <h4>Reforma</h4>
-                                </div>
-                                <div class="descricao-pilar">
-                                    <p>Modernizamos e adaptamos espaços residenciais e comerciais com segurança, otimização de layouts, acabamentos de alto padrão e mínimo transtorno.</p>
-                                </div>
-                            </div>
-                            <div>
-                                <button>Estrutural</button>
-                                <button>Interiores</button>
-                                <button>Fachadas</button>
-                            </div>
-                        </div>
-                        <div class="rodape-card-pilar">
-                            <div class="indicadores">
-                                <span>100+</span>
-                                <span>Reformas Concluídas</span>
-                            </div>
-                            <div>
-                                <button>Saiba Mais</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-pilar">
-                        <div class="head-card-pilar">
-                            <i class="fa-solid fa-screwdriver-wrench"></i>
-                            <p>Conservação e Segurança</p>
-                        </div>
-                        <div class="conteudo-card-pilar">
-                            <div>
-                                <div>
-                                    <p class="sub-titulo-conteudo-card-pilar">Serviço</p>
-                                    <h4>Manutenção</h4>
-                                </div>
-                                <div class="descricao-pilar">
-                                    <p>Soluções rápidas e eficientes para preservar o patrimônio, corrigir falhas estruturais, hidráulicas, elétricas e garantir a durabilidade das instalações.</p>
-                                </div>
-                            </div>
-                            <div>
-                                <button>Preventiva</button>
-                                <button>Corretiva</button>
-                                <button>Predial</button>
-                            </div>
-                        </div>
-                        <div class="rodape-card-pilar">
-                            <div class="indicadores">
-                                <span>Suporte</span>
-                                 <span>Contínuo</span>
-                            </div>
-                            <div>
-                                <button>Saiba Mais</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
 
         <section id="servicos">
             <div class="container mt-5 mb-5">
@@ -640,63 +509,6 @@
             </div>
         </section>
 
-        <section id="quem-somos" class="py-5">
-            <div class="container">
-                <div class="row mt-5 paddingMobile">
-                    <div class="col-md-6">
-                        <h1 class="titulo-sessao">Quem Somos</h1>
-                        <p class="sub-titulo-sessao">Conheça a nossa empresa.</p>
-                    </div>
-                    <div class="col-md-6">
-                        A <strong class="fontGrande">Rayk do Vale</strong> nasceu em 2023 unindo a experiência prática de mais de 30 anos no canteiro de obras com uma gestão técnica, moderna e transparente. Cuidamos do seu projeto do papel até a entrega das chaves.
-                    </div>
-                </div>
-                <div class="row mt-5 mb-5 paddingMobile">
-                    <div id="container-cards-quemSomos" class="row"></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="o-que-fazemos">
-            <div class="container py-5 paddingMobile">
-                <div class="row paddingMobile">
-                    <div class="col-md-6">
-                        <h6 class="titulo-sessao">SERVIÇOS</h6>
-                        <h1 class="sub-titulo-sessao">O QUE FAZEMOS</h1>
-                    </div>
-                    <div class="col-md-6">
-                        <p>Atuamos do planejamento inicial à entrega das chaves, oferecendo engenharia de precisão, gestão rigorosa de prazos e excelência em acabamento para projetos residenciais, comerciais e corporativos.</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div id="cards-o-que-fazemos" class="container-cards py-5">
-                        <div class="card">
-                            <i class="fa-solid fa-paint-roller"></i>
-                            <div class="card-conteudo">
-                                <h6>Pintura</h6>
-                                <p>Pintura interna e externa com acabamentos premium e preparação de superfície.</p>
-                                <a href="">Veja mais</a>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <i class="fa-solid fa-paint-roller"></i>
-                            <div class="card-conteudo">
-                                <h6>Pintura</h6>
-                                <p>Pintura interna e externa com acabamentos premium e preparação de superfície.</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <i class="fa-solid fa-paint-roller"></i>
-                            <div class="card-conteudo">
-                                <h6>Pintura</h6>
-                                <p>Pintura interna e externa com acabamentos premium e preparação de superfície.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
         <section id="projetos">
             <div class="container py-5 paddingMobile">
                 <div class="row paddingMobile">
