@@ -1,54 +1,5 @@
-#o-que-fazemos{
-            background-color: rgba(255, 255, 255, 1);
-            color: black;
-        }
-        .o-que-fazemos{
-            display: flex;
-            justify-content: end;
-        }
+#cards-o-que-fazemos{
+}
 
-        .sub-titulo-sessao{
-        }
-
-        .rayk{
-            color: white;
-        }
-
-        .lista-o-que-fazemos{
-            max-width: 600px;
-            margin-left: auto;
-        }
-
-        .item-o-que-fazemos{
-            display: flex;
-            gap: 25px;
-            align-items: baseline;
-            padding: 20px 15px;
-            border-bottom: 1px solid rgba(0,0,0,.4);
-            /* border: 1px solid rgba(0,0,0,.25); */
-        }
-
-        @media (max-width: 768px) {
-            .item-o-que-fazemos{
-                display: grid;
-            }
-        }
-
-        .item-o-que-fazemos:hover{
-            background: rgba(0,0,0,.15);
-        }
-
-        .item-o-que-fazemos h3{
-            margin: 0 0 8px;
-            font-size: 1.2rem;
-        }
-        .item-o-que-fazemos p{
-            margin: 0;
-            color: rgba(0,0,0,.65)
-        }
-
-        .numero{
-            color: #efc679;
-            font-size: 1.1rem;
-            font-weight: 700;
-        }
+#cards-o-que-fazemos .card{
+}

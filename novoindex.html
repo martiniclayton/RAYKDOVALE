@@ -21,6 +21,87 @@
     <link rel="stylesheet" href="css/diferenciais.css">
     <link rel="stylesheet" href="css/processo.css">
     <link rel="stylesheet" href="css/o-que-fazemos.css">
+
+    <style>
+        /* pilaress */
+
+        .container-cards-pilares{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto 1fr auto;
+            gap: 30px;
+        }
+
+        .container-cards-pilares .card-pilar{
+            display: grid;
+            grid-template-rows: subgrid;
+            grid-row: span 3;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .container-cards-pilares .card-pilar .head-card-pilar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container-cards-pilares .card-pilar .head-card-pilar i{
+            font-size: 25px;
+        }
+
+        .container-cards-pilares .card-pilar .head-card-pilar p{
+            max-width: 20ch;
+            text-align: end;
+            font-size: 12px;
+        }
+
+        .container-cards-pilares .card-pilar .conteudo-card-pilar{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .container-cards-pilares .card-pilar .conteudo-card-pilar button{
+            width: 90px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 1px solid black;
+            font-size: 12px;
+            padding: 2px;
+            color: white;
+        }
+
+        .sub-titulo-conteudo-card-pilar{
+            margin: 0;
+        }
+
+
+        .container-cards-pilares .card-pilar .rodape-card-pilar{
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+        }
+
+        .container-cards-pilares .card-pilar .rodape-card-pilar button{
+            background-color: transparent;
+            color: black;
+            border: 1px solid black;
+            padding: 5px 10px;
+            transition: .3s ease;
+        }
+
+        .container-cards-pilares .card-pilar .rodape-card-pilar button:hover{
+            background-color: black;
+            color: white;
+            border: 1px solid black;
+        }
+
+        .rodape-card-pilar .indicadores{
+            display: flex;
+            flex-direction: column;
+            font-size: 12px;
+        }
+    </style>
 </head>
 <body>
     <header id="header" class="">
@@ -67,6 +148,121 @@
                 <div class="row centralizar">
                     <div class="col-md-12 centralizar">
                         <button class="btn-hero ">Solicitar Orçamento</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pilares">
+            <div class="container py-5">
+                <div class="row">
+                    <h1 class="titulo-sessao">NOSSOS PILARES</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1>Como estruturamos cada projeto</h1>
+                    </div>
+                    <div class="col-md-6">
+                        <p>Unimos gestão técnica rigorosa, planejamento de custos e execução eficiente para entregar obras residenciais, comerciais e industriais com total segurança.</p>
+                    </div>
+                </div>
+                <div class="container-cards-pilares py-5">
+                    <!-- 1. Construção -->
+                    <div class="card-pilar">
+                        <div class="head-card-pilar">
+                            <i class="fa-solid fa-helmet-safety"></i>
+                            <p>Do Planejamento ao Acabamento</p>
+                        </div>
+                        <div class="conteudo-card-pilar">
+                            <div>
+                                <div>
+                                    <p class="sub-titulo-conteudo-card-pilar">Serviço</p>
+                                    <h4>Construção</h4>
+                                </div>
+                                <div class="descricao-pilar">
+                                    <p>Execução completa de projetos de engenharia civil com rigor técnico, controle de orçamento, gestão de mão de obra qualificada e entrega garantida no prazo.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <button>Residencial</button>
+                                <button>Comercial</button>
+                                <button>Galpões</button>
+                            </div>
+                        </div>
+                        <div class="rodape-card-pilar">
+                            <div class="indicadores">
+                                <span>50+</span>
+                                <span>Obras Executadas</span>
+                                
+                            </div>
+                            <div>
+                                <button>Saiba Mais</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2. Reforma -->
+                    <div class="card-pilar">
+                        <div class="head-card-pilar">
+                            <i class="fa-solid fa-paint-roller"></i>
+                            <p>Renovação e Valorização</p>
+                        </div>
+                        <div class="conteudo-card-pilar">
+                            <div>
+                                <div>
+                                    <p class="sub-titulo-conteudo-card-pilar">Serviço</p>
+                                    <h4>Reforma</h4>
+                                </div>
+                                <div class="descricao-pilar">
+                                    <p>Modernizamos e adaptamos espaços residenciais e comerciais com segurança, otimização de layouts, acabamentos de alto padrão e mínimo transtorno.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <button>Estrutural</button>
+                                <button>Interiores</button>
+                                <button>Fachadas</button>
+                            </div>
+                        </div>
+                        <div class="rodape-card-pilar">
+                            <div class="indicadores">
+                                <span>100+</span>
+                                <span>Reformas Concluídas</span>
+                            </div>
+                            <div>
+                                <button>Saiba Mais</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 3. Manutenção -->
+                    <div class="card-pilar">
+                        <div class="head-card-pilar">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                            <p>Conservação e Segurança</p>
+                        </div>
+                        <div class="conteudo-card-pilar">
+                            <div>
+                                <div>
+                                    <p class="sub-titulo-conteudo-card-pilar">Serviço</p>
+                                    <h4>Manutenção</h4>
+                                </div>
+                                <div class="descricao-pilar">
+                                    <p>Soluções rápidas e eficientes para preservar o patrimônio, corrigir falhas estruturais, hidráulicas, elétricas e garantir a durabilidade das instalações.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <button>Preventiva</button>
+                                <button>Corretiva</button>
+                                <button>Predial</button>
+                            </div>
+                        </div>
+                        <div class="rodape-card-pilar">
+                            <div class="indicadores">
+                                <span>Suporte</span>
+                                 <span>Contínuo</span>
+                            </div>
+                            <div>
+                                <button>Saiba Mais</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -186,37 +382,36 @@
         <section id="o-que-fazemos">
             <div class="container py-5 paddingMobile">
                 <div class="row paddingMobile">
-                    <div class="col-md-5 mb-5">
+                    <div class="col-md-6">
                         <h6 class="titulo-sessao">SERVIÇOS</h6>
                         <h1 class="sub-titulo-sessao">O QUE FAZEMOS</h1>
+                    </div>
+                    <div class="col-md-6">
                         <p>Atuamos do planejamento inicial à entrega das chaves, oferecendo engenharia de precisão, gestão rigorosa de prazos e excelência em acabamento para projetos residenciais, comerciais e corporativos.</p>
                     </div>
-                    <div class="col-md-7 o-que-fazemos">
-                        <div class="lista-o-que-fazemos">
-                            <div class="item-o-que-fazemos">
-                                <span class="numero"> 01</span>
-                                <div>
-                                    <h3>Construção</h3>
-                                    <p>Obras residenciais e corporativas executadas do alicerce ao acabamento final.</p>
-                                    <a href="">Veja mais</a>
-                                </div>
+                </div>
+                <div class="row">
+                    <div id="cards-o-que-fazemos" class="container-cards py-5">
+                        <div class="card">
+                            <i class="fa-solid fa-paint-roller"></i>
+                            <div class="card-conteudo">
+                                <h6>Pintura</h6>
+                                <p>Pintura interna e externa com acabamentos premium e preparação de superfície.</p>
+                                <a href="">Veja mais</a>
                             </div>
-                            <div class="item-o-que-fazemos">
-                                <span class="numero"> 02</span>
-                                <div>
-                                    <h3>Reforma</h3>
-                                    <p>Modernização de espaços existentes com mínima interferência na rotina do cliente.</p>
-                                    <a href="">Veja mais</a>
-
-                                </div>
+                        </div>
+                        <div class="card">
+                            <i class="fa-solid fa-paint-roller"></i>
+                            <div class="card-conteudo">
+                                <h6>Pintura</h6>
+                                <p>Pintura interna e externa com acabamentos premium e preparação de superfície.</p>
                             </div>
-                            <div class="item-o-que-fazemos">
-                                <span class="numero"> 03</span>
-                                <div>
-                                    <h3>Manutenção</h3>
-                                    <p>Serviços prediais preventivos e corretivos com equipe própria e resposta rápida.</p>
-                                    <a href="">Veja mais</a>
-                                </div>
+                        </div>
+                        <div class="card">
+                            <i class="fa-solid fa-paint-roller"></i>
+                            <div class="card-conteudo">
+                                <h6>Pintura</h6>
+                                <p>Pintura interna e externa com acabamentos premium e preparação de superfície.</p>
                             </div>
                         </div>
                     </div>
