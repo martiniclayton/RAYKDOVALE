@@ -5,10 +5,10 @@ const cards = [
     {numero: "100%", descrição: "Prazos Cumpridos"}
 ]
 
-const container = document.getElementById("container-cards-quemSomos");
+const containerQuemSomos = document.getElementById("container-cards-quemSomos");
 
 function atualizarCardsQuemSomos(){
-    container.innerHTML = "";
+    containerQuemSomos.innerHTML = "";
 
     const html = 
 
@@ -21,7 +21,7 @@ function atualizarCardsQuemSomos(){
         `
     ).join("");
 
-    container.innerHTML = html;
+    containerQuemSomos.innerHTML = html;
 }
 
 atualizarCardsQuemSomos()

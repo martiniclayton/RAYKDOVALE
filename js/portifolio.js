@@ -6,11 +6,11 @@ const obras = [
     {imagem: "img/female-engineers-working.jpg", nome: "Residência Horizonte", local: "Residencial · Alphaville, SP", categoria: "Construção"},
 ]
 
-const container = document.getElementById("container-obras");
+const containerPortifolio = document.getElementById("container-obras");
 
 
 function atualizarTela(){
-    container.innerHTML = ``;
+    containerPortifolio.innerHTML = ``;
 
     obras.forEach((obra, index) =>{
 
@@ -22,7 +22,7 @@ function atualizarTela(){
             classe = "col-md-7"
         };
 
-        container.innerHTML += `
+        containerPortifolio.innerHTML += `
         <div class="${classe}">
             <div class="box-obra">
                 <div class="img-box-obra">
