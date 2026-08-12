@@ -1,9 +1,9 @@
 const obras = [
     {imagem: "img/obra01galpao.jpeg", nome: "Construção de Galpão", local: "Inajá, PE", categoria: "Construção"},
-    {imagem: "img/female-engineers-working.jpg", nome: "Residência Horizonte", local: "Residencial · Alphaville, SP", categoria: "Construção"},
-    {imagem: "img/female-engineers-working.jpg", nome: "Residência Horizonte", local: "Residencial · Alphaville, SP", categoria: "Construção"},
-    {imagem: "img/female-engineers-working.jpg", nome: "Residência Horizonte", local: "Residencial · Alphaville, SP", categoria: "Construção"},
-    {imagem: "img/female-engineers-working.jpg", nome: "Residência Horizonte", local: "Residencial · Alphaville, SP", categoria: "Construção"},
+    {imagem: "img/modern-city-construction-site.jpg", nome: "Residência Horizonte", local: "Residencial · Alphaville, SP", categoria: "Construção"},
+    {imagem: "img/heavy-excavator-digging-day-light.jpg", nome: "Residência Horizonte", local: "Residencial · Alphaville, SP", categoria: "Construção"},
+    {imagem: "img/imgCardBradesco.png", nome: "Residência Horizonte", local: "Residencial · Alphaville, SP", categoria: "Construção"},
+    {imagem: "img/low-angle-perspective-tree-with-beautiful-canopy.jpg", nome: "Residência Horizonte", local: "Residencial · Alphaville, SP", categoria: "Construção"},
 ]
 
 const containerPortifolio = document.getElementById("container-obras");

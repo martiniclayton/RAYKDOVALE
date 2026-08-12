@@ -133,7 +133,7 @@
             }
             .container-card-apresentacao .card-apresentacao{
                 display: grid;
-                margin: auto;
+                margin: 2px auto;
                 background-color: rgba(0, 0, 0, 0.02);
                 grid-template-rows: subgrid;
                 grid-row: span 5;
@@ -158,6 +158,10 @@
             box-shadow: 0 0 5px #c58612;
         }
 
+        .container-card-apresentacao .card-apresentacao:hover .img-card img{
+            transform: scale(1.1);
+        }
+
 
         .container-card-apresentacao .card-apresentacao .img-card{
             position: relative;
@@ -169,6 +173,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: .5s ease;
         }
 
         .container-card-apresentacao .card-apresentacao .img-card::before{
@@ -176,7 +181,7 @@
             inset: 0;
             content: "";
             background-color: rgba(0, 0, 0, 0.4);
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, .8) );
+            /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, .8) ); */
         }
 
         .container-card-apresentacao .card-apresentacao .titulo-card{
@@ -233,13 +238,18 @@
         /* portifolio */
 
         #portifolio{
+            background: #f8f9fa;
+        }
 
+        .box-obra{
+            margin-bottom: 30px;
         }
 
         .img-box-obra{
             position: relative;
             height: 300px;
             overflow: hidden;
+            margin-bottom: 10px;
         }
 
         .img-box-obra::before{
@@ -256,8 +266,13 @@
             transition: .6s ease;
         }
 
-        .img-box-obra:hover img{
+        .box-obra:hover .img-box-obra img{
             transform: scale(1.1);
+        }
+
+        .conteudo-box-obra{
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
         }
 
         .categoria{
