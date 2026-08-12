@@ -3,16 +3,26 @@ const obras = [
     {imagem: "img/modern-city-construction-site.jpg", nome: "Residência Horizonte", local: "Residencial · Alphaville, SP", categoria: "Construção"},
     {imagem: "img/heavy-excavator-digging-day-light.jpg", nome: "Residência Horizonte", local: "Residencial · Alphaville, SP", categoria: "Construção"},
     {imagem: "img/imgCardBradesco.png", nome: "Residência Horizonte", local: "Residencial · Alphaville, SP", categoria: "Construção"},
-    {imagem: "img/low-angle-perspective-tree-with-beautiful-canopy.jpg", nome: "Residência Horizonte", local: "Residencial · Alphaville, SP", categoria: "Construção"},
+    {imagem: "img/low-angle-perspective-tree-with-beautiful-canopy.jpg", nome: "Residência Horizonte", local: "Residencial · Alphaville, SP", categoria: "Reforma"},
 ]
+
+function filtrar(categoria){
+    const filtrado = obras.filter(cat => cat.categoria === categoria);
+
+    atualizarTela(filtrado);
+    return filtrado;
+}
+
+
+
 
 const containerPortifolio = document.getElementById("container-obras");
 
 
-function atualizarTela(){
+function atualizarTela(arrayObras){
     containerPortifolio.innerHTML = ``;
 
-    obras.forEach((obra, index) =>{
+    arrayObras.forEach((obra, index) =>{
 
         let classe = "col-md-4";
 
@@ -37,4 +47,4 @@ function atualizarTela(){
     })
 }
 
-atualizarTela();
+atualizarTela(obras);
