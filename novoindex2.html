@@ -300,6 +300,40 @@
             font-weight: 700;
             color: #c58612;
         }
+
+        #portifolio .btns-filtro button{
+            width: 120px;
+            padding: 5px;
+            background-color: transparent;
+            border: 1px solid rgba(0, 0, 0, 0.4);
+            color: rgba(0, 0, 0, 0.8);
+            transition: .4s ease;
+        }
+        #portifolio .btns-filtro button:hover{
+            background-color: black;
+            color: white;
+        }
+        #portifolio .btns-filtro button.clicado{
+            background-color: black;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            #portifolio .btns-filtro{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 20px;
+            }
+            #portifolio .btns-filtro .btn-fiiltro{
+                width: 100px;
+            }
+        }
+
+
+
+
         /* frentes */
 
         #frentes .conteudo-frentes{
@@ -734,10 +768,14 @@
                     </div>
                 </div>
                 <div class="row">
-                    <button onclick="atualizarTela(obras)">Todos</button>
-                    <button onclick="filtrar('Construção')">Construção</button>
-                    <button onclick="filtrar('Manutenção')">Manutenção</button>
-                    <button onclick="filtrar('Reforma')">Reforma</button>
+                    <div class="col-md-12">
+                        <div class="btns-filtro">
+                            <button class="btn-fiiltro clicado" onclick="filtragem(this)" value="Todos">Todos</button>
+                            <button class="btn-fiiltro" onclick="filtragem(this)" value="Construção">Construção</button>
+                            <button class="btn-fiiltro" onclick="filtragem(this)" value="Manutenção">Manutenção</button>
+                            <button class="btn-fiiltro" onclick="filtragem(this)" value="Reforma">Reforma</button>
+                        </div>
+                    </div>
                 </div>
                 <div id="container-obras" class="row py-5">
                 </div>
