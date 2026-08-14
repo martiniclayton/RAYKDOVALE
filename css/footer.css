@@ -31,7 +31,7 @@
         .caixa-footer{
             display: flex;
             flex-wrap: wrap;
-            gap: 100px;
+            gap: 0 100px;
             justify-content: end;
         }
 
