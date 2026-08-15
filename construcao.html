@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/btn-text-sombras-var.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/CTA.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/portifolio.css">
+    <link rel="stylesheet" href="css/escopo.css">
+    <link rel="stylesheet" href="css/construcao.css">
+
+
+    <style>
+
+        #construcao{
+        }
+        #construcao .row .col-md-12 img{
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        #construcao .sub-titulo-sessao{
+            font-size: 60px;
+            font-weight: 600;
+        }
+
+        #construcao .col-md-6{
+            align-self: self-end;
+        }
+
+        #construcao01 .cards{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto 1fr;
+        }
+
+        #construcao01 .cards .card{
+            display: grid;
+            grid-template-rows: subgrid;
+            grid-row: span 2;
+            padding: 20px;
+            border: none;
+            border-radius: 0;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+        }
+
+        #construcao01 .cards .card h5{
+            font-size: 17px;
+        }
+
+        #construcao01 .cards .card p{
+            font-size: 14px;
+        }
+
+        #etapas .cards{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto 1fr;
+        }
+
+        #etapas .cards .card{
+            display: grid;
+            grid-row: span 2;
+            border-radius: 0;
+            grid-template-rows: subgrid;
+            padding: 25px;
+        }
+
+        #etapas .cards .card h5{
+            font-size: 18px;
+        }
+
+        #etapas .cards .card p{
+            font-size: 15px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <header id="header" class="">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img id="logo" src="img/logoBranco.png" width="250" alt=""></a>
+
+                <button id="btn-toggle" class="navbar-toggler" type="button" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menuNavbar">
+                    <div class="divLogoFecharMenu">
+                        <div id="fecharToggle">
+                            <div id="btn-toggleMenu" class="">
+                        <span class=""><i class="fa-solid fa-xmark"></i></span>
+                        </div>
+                    </div>
+                    <a class="navbar-brand" href="#"><img id="logoToggle" src="img/logoPreto.png" width="150" alt=""></a>
+                    </div>
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#servicos">Serviços</a>
+                    <a class="nav-link" href="#projetos">Projetos</a>
+                    <a class="nav-link me-5" href="#quem-somos">Quem Somos</a>
+                </div>
+                <a href="cardmoderno.html">
+                    <button class="btn btn-nav">Solicitar Orçamento</button>
+                </a>
+                </div>
+            </div>
+            </nav>
+    </header>
+    <div id="overlayToggle"></div>
+    <section id="construcao">
+        <div class="container py-5 paddingMobile">
+            <div class="row paddingMobile">
+                <h1 class="titulo-sessao">Destaque do Portfólio</h1>
+            </div>
+            <div class="row paddingMobile">
+                <div class="col-md-6">
+                    <h1 class="sub-titulo-sessao">A precisão técnica aplicada ao morar contemporâneo.</h1>
+                </div>
+                <div class="col-md-6">
+                    <p>Executamos projetos de alta complexidade com rigor técnico e fidelidade absoluta aos detalhes arquitetônicos.</p>
+                </div>
+            </div>
+            <div class="row py-5">
+                <div class="col-md-12">
+                    <img src="img/fundacao.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="etapas">
+        <div class="container paddingMobile">
+            <div class="rpw">
+                <h1>Nossos Serviços</h1>
+            </div>
+                <div class="row  py-5">
+                    <div class="container-card-apresentacao">
+                        
+                        <!-- Card 1: Construção Civil -->
+                        <div class="card-apresentacao">
+                            <div class="img-card">
+                                <img src="img/obra01galpao.jpeg" width="100%" alt="">
+                            </div>
+                            <div class="titulo-card">
+                                <h4>Infraestrutura & Fundação</h4>
+                            </div>
+                            <div class="descricao-card">
+                                <p>Terraplanagem, escavação e locação topográfica. Sapatas, tubulões, blocos, estacas, controle de nível e testes de resistência do concreto.</p>
+                            </div>
+                            <div class="list">
+                                <span class="item-list">Terraplanagem</span>
+                                <span class="item-list">Escavação</span>
+                                <span class="item-list">Fundações</span>
+                                <span class="item-list">Blocos & Estacas</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Reforma -->
+                        <div class="card-apresentacao">
+                            <div class="img-card">
+                                <img src="img/reforma.jpeg" width="100%" alt="">
+                            </div>
+                            <div class="titulo-card">
+                                <h4>Superestrutura & Alvenaria</h4>
+                            </div>
+                            <div class="descricao-card">
+                                <p>Execução de pilares, vigas e lajes (moldadas in loco ou pré-moldadas), alvenaria estrutural ou de vedação, além de montagem de estruturas metálicas e coberturas.</p>
+                            </div>
+                            <div class="list">
+                                <span class="item-list">Pilares & Vigas</span>
+                                <span class="item-list">Lajes</span>
+                                <span class="item-list">Alvenaria</span>
+                                <span class="item-list">Estrutural</span>
+                                <span class="item-list">Coberturas</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Manutenção -->
+                        <div class="card-apresentacao">
+                            <div class="img-card">
+                                <img src="img/manutenção.jpeg" width="100%" alt="">
+                            </div>
+                            <div class="titulo-card">
+                                <h4>Instalações Técnicas</h4>
+                            </div>
+                            <div class="descricao-card">
+                                <p>Passagem de infraestrutura elétrica, hidráulica e hidrossanitária, além de infraestrutura dedicada para climatização, prevenção de incêndio e rede de dados.</p>
+                            </div>
+                            <div class="list">
+                                <span class="item-list">Elétrica</span>
+                                <span class="item-list">Hidráulica</span>
+                                <span class="item-list">Climatização</span>
+                                <span class="item-list">Incêndio & Dados</span>
+                            </div>
+                        </div>
+                        <div class="card-apresentacao">
+                            <div class="img-card">
+                                <img src="img/manutenção.jpeg" width="100%" alt="">
+                            </div>
+                            <div class="titulo-card">
+                                <h4>Acabamento & Finalização</h4>
+                            </div>
+                            <div class="descricao-card">
+                                <p>Execução de contrapiso, impermeabilização de áreas úmidas/lajes, assentamento de revestimentos, pintura, esquadrias, vistoria técnica e entrega formal da obra.</p>
+                            </div>
+                            <div class="list">
+                                <span class="item-list">Impermeabilização</span>
+                                <span class="item-list">Revestimentos</span>
+                                <span class="item-list">Pintura & Esquadrias</span>
+                                <span class="item-list">Vistoria</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portifolio">
+            <div class="container py-5 paddingMobile">
+                <div class="row paddingMobile">
+                    <h1 class="titulo-sessao">Portfólio</h1>
+                </div>
+                <div class="row paddingMobile">
+                    <div class="col-md-6">
+                        <h1 class="sub-titulo-sessao">Projetos que falam por nós.</h1>
+                        <p>Conheça algumas das nossas realizações. Cada obra reflete a nossa busca constante por excelência técnica, rigor estrutural e cumprimento de prazos.</p>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <a href="">Ver disponibilidade de agenda</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="btns-filtro">
+                            <button class="btn-fiiltro clicado" onclick="filtragem(this)" value="Todos">Todos</button>
+                            <button class="btn-fiiltro" onclick="filtragem(this)" value="Construção" id="btn-construcao">Construção</button>
+                            <button class="btn-fiiltro" onclick="filtragem(this)" value="Manutenção">Manutenção</button>
+                            <button class="btn-fiiltro" onclick="filtragem(this)" value="Reforma">Reforma</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="container-obras" class="row py-5">
+                </div>
+            </div>
+        </section>
+
+    <section id="construcao01">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-4">
+                    Nossos diferenciais
+                </div>
+                <div class="col-md-8">
+                    <h1>Engenharia de precisão a serviço do projeto de arquitetura.</h1>
+
+                    <p>Há mais de 15 anos a Métrica Obras executa projetos residenciais e corporativos em São Paulo. Nascemos dentro do canteiro, com equipe própria e método técnico: cada obra é tratada como um sistema de medidas, prazos e custos que precisa fechar.</p>
+
+                    <p>Trabalhamos em parceria estreita com escritórios de arquitetura, participando desde a compatibilização de projetos até a entrega das chaves — sem reinterpretar o desenho, sem improviso, sem custo oculto.</p>
+
+                    <div class="cards py-5">
+                        <div class="card">
+                            <h5>Gestão Transparente</h5>
+                            <p>Relatórios periódicos de evolução de obra e medições físico-financeiras.</p>
+                        </div>
+                        <div class="card">
+                            <h5>Segurança e Rigor Técnico</h5>
+                            <p>Equipe treinada, uso de EPIs e acompanhamento contínuo de engenharia no canteiro.</p>
+                        </div>
+                        <div class="card">
+                            <h5>Prazos Cumpridos</h5>
+                            <p>Planejamento detalhado para evitar atrasos e desperdício de materiais.</p>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    
+
+        <section id="CTA">
+            <div class="container py-5">
+                <div class="row text-center d-flex justify-content-center paddingMobile">
+                    <div class="container-CTA">
+                        <h1>Vamos tirar seu projeto do papel</h1>
+                        <p>Nossa equipe técnica está pronta para analisar seu projeto arquitetônico e fornecer um orçamento detalhado com cronograma de execução.</p>
+                        <button class="">Solicitar Orçamento</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+        <div class="container py-5 footer">
+            <div class="row paddingMobile inverter">
+                <div class="col-md-4 footerLogo">
+                    <p>Transformando projetos em realidade com excelência técnica, rigor estrutural e compromisso absoluto em cada entrega.</p>
+                    <img src="img/logoPreto.png" width="250px" alt="">
+                </div>
+                <div class="col-md-8 caixa-footer">
+                    <div class="caixa">
+                        <h5>Links Úteis</h5>
+                        <ul>
+                            <li><a href="">Inicío</a></li>
+                            <li><a href="">Serviços</a></li>
+                            <li><a href="">Projetos</a></li>
+                            <li><a href="">Quem Somos</a></li>
+                            <li><a href="">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="caixa">
+                        <h5>Serviços</h5>
+                        <ul>
+                            <li><a href="">Construção</a></li>
+                            <li><a href="">Reforma</a></li>
+                            <li><a href="">Manutenção</a></li>
+                        </ul>
+                    </div>
+                    <div class="caixa">
+                        <h5>Contato</h5>
+                        <ul>
+                            <li><a href="">Rua Ulisses Guimarães - 56520-000, Catimbau - PE</a></li>
+                            <li><a href="">(87) 98173-3387</a></li>
+                            <li><a href="">contato@raykdovale.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row text-center paddingMobile">
+                <span>© 2026 RAYK DO VALE CONSTRUTORA LTDA - CNPJ: 22925934000177</span>
+                <p>Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/portifolio.js"></script>
+    <script>
+        const botao = document.getElementById("btn-construcao");
+
+        filtragem(botao);
+    </script>
+</body>
+</html>

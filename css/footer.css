@@ -31,7 +31,6 @@
         .caixa-footer{
             display: flex;
             flex-wrap: wrap;
-            gap: 0 100px;
             justify-content: end;
         }
 
@@ -41,10 +40,9 @@
             }
         }
 
-        .caixa-footer .testeA{
-        }
 
         .caixa{
+            min-width: 200px;
             max-width: 270px;
         }
 
@@ -56,7 +54,7 @@
         @media (max-width: 768px) {
             .footerLogo{
                 margin-top: 40px;
-                text-align: center;
+                text-align: start;
             }
             .footerLogo img{
                 width: 200px;
