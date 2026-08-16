@@ -1,5 +1,5 @@
 const obras = [
-    {imagem: "assets/imagens/portifolio copy/obraCasasInajá/WhatsApp Image 2026-08-12 at 20.19.45.jpeg", nome: "Residências Sociais", local: "Inajá, PE", categoria: "Construção"},
+    {imagem: "assets/imagens/portifolio copy/obraCasasInajá/WhatsApp Image 2026-08-12 at 20.19.45.jpeg", nome: "Residencias Sociais", local: "Inajá, PE", categoria: "Construção"},
     {imagem: "assets/imagens/portifolio copy/casaCatimbau/construcao.JPG", nome: "Casa", local: "Catimbau, PE", categoria: "Construção"},
     {imagem: "assets/imagens/portifolio copy/ReformaBancoBradesco/imgCardBradesco.png", nome: "Reforma Banco Bradesco", local: " Buique, PE", categoria: "Reforma"},
 ]
@@ -58,12 +58,12 @@ function atualizarTela(arrayObras){
                 <div class="img-box-obra">
                     <span class="categoria">${obra.categoria}</span>
                     <img src="${obra.imagem}" width="100%" alt="">
-                    </div>
-                    <div class="conteudo-box-obra"><h4>${obra.nome}</h4>
-                    <p>${obra.local}</p></div>
-                    </div>
-                    </div>
-                    `
+                </div>
+                <div class="conteudo-box-obra"><h4>${obra.nome}</h4>
+                <p>${obra.local}</p></div>
+            </div>
+        </div>
+        `
     })
 }
 

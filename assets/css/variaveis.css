@@ -1,17 +1,15 @@
-:root{
-    --font-card-titulo: clamp(1.1rem, 1.5vw + 1.5rem, 3.35rem);
-    --font-card-desc: clamp(0.85rem, 0.8vw + 0.5rem, 1.2rem);
-
-    --line-height-card-titulo: 1;
-    --line-height-card-desc: 1.4;
+:root {
+    --cor-principal: white;
+    --cor-secundaria: black;
+    --sombra: 0 0 8px rgba(0, 0, 0, 0.4);
+    --cor-hover: rgba(239, 198, 121, .4);
 }
 
 @media (max-width: 768px) {
-    .paddingMobile{
+    .paddingMobile {
         padding: 0 25px;
     }
 }
-
 
 .titulo-sessao{
     background: linear-gradient(90deg, #efc679, #10100f);
@@ -19,31 +17,16 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-    font-size: var(--font-card-desc);
-    line-height: var(--line-height-card-desc);
-    font-weight: bold;
-    /* font-size: 20px; */
+    font-size: 20px;
 }
 
 .sub-titulo-sessao{
-    /* font-size: 40px; */
-    font-size: var(--font-card-titulo);
-    line-height: var(--line-height-card-titulo);
-    letter-spacing: .05px;
-    color: #1d1d1f;
-    font-weight: 600;
-}
-
-.sub-texto-seção{
-    align-self: last baseline;
-}
-
-.secao-link{
-    text-decoration: none;
-    font-weight: 700;
-    color: #c58612;
+    font-family: "neue-haas-grotesk-display-pro", sans-serif;
+    font-size: 40px;
+    line-height: 1.1;
+    letter-spacing: .5px;
 }
 
 section{
-    scroll-margin-top: 80px;
+    scroll-margin-top: 90px;
 }

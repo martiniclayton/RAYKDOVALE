@@ -1,9 +1,4 @@
-:root{
-    --cor-principal: white;
-    --cor-secundaria: black;
-    --sombra: 0 0 8px rgba(0, 0, 0, 0.4);
-    --cor-hover: rgba(239, 198, 121, .4);
-}
+@import url(variaveis.css);
 
 #Hero{
     position: relative;
@@ -130,4 +125,4 @@
         justify-content: center ;
         text-align: center ;
     }
-}   
+}
