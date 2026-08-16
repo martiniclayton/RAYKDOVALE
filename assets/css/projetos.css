@@ -130,6 +130,7 @@
         .conteudo-card p, 
         .demaisDescs p {
             font-size: clamp(0.85rem, 1.2vw, 1rem) !important;
+            color: white !important;
         }
 
         .header-card{

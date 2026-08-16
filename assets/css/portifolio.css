@@ -65,20 +65,24 @@
             color: #c58612;
         }
 
+        #portifolio .btns-filtro{
+        }
+
         #portifolio .btns-filtro button{
-            width: 120px;
-            padding: 5px;
+            width: 100px;
+            padding: 2px;
+            font-size: 15px;
             background-color: transparent;
             border: 1px solid rgba(0, 0, 0, 0.4);
-            color: rgba(0, 0, 0, 0.8);
+            color: rgba(0, 0, 0, 0.5);
             transition: .4s ease;
         }
         #portifolio .btns-filtro button:hover{
-            background-color: black;
+            background-color: rgba(0, 0, 0, 0.5);
             color: white;
         }
         #portifolio .btns-filtro button.clicado{
-            background-color: black;
+            background-color: rgba(0, 0, 0, 0.7);
             color: white;
         }
 

@@ -20,10 +20,9 @@
             text-transform: uppercase;
         }
 
-        .container-CTA p{
+        #CTA .container-CTA p{
             font-size: clamp(.85rem, 1vw, 1.5rem);
-            color: var(--cor-rgbaP)
-
+            color: var(--cor-rgbaP) !important;
         }
         .container-CTA button{
             width: 200px;

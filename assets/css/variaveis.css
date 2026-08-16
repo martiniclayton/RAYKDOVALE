@@ -5,6 +5,10 @@
     --cor-hover: rgba(239, 198, 121, .4);
 }
 
+p{
+    color: rgba(0, 0, 0, 0.6) !important;
+}
+
 @media (max-width: 768px) {
     .paddingMobile {
         padding: 0 25px;

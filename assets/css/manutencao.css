@@ -21,19 +21,35 @@
     object-position: center;
 }
 
-#manutencao .numeros-empresa .col-md-3{
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
+.bg{
+    background-color: #f8f8f9;
+}
+
+#numeros-empresa{
+    background: black;
+}
+
+#numeros-empresa .numeros-empresa .col-md-3{
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.6);
     padding: 20px;
     transition: .4s ease;
 }
 
-#manutencao .numeros-empresa .col-md-3:hover{
+#numeros-empresa .numeros-empresa .col-md-3 h5{
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#numeros-empresa .numeros-empresa .col-md-3 p{
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#numeros-empresa .numeros-empresa .col-md-3:hover{
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
     padding: 20px;
     transform: translateY(-10px);
 }
 
-#manutencao .numeros-empresa .col-md-3 h5{
+#numeros-empresa .numeros-empresa .col-md-3 h5{
     font-size: 25px;
     font-weight: 700;
 }
