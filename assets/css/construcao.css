@@ -1,0 +1,95 @@
+@import url(variaveis.css);
+#sub-hero{
+    position: relative;
+    background-image: url(../imagens/obras-andamento/obra01galpao.jpeg);
+    height: 50vh;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#sub-hero .container{
+    position: relative;
+    z-index: 2;
+}
+
+#sub-hero .sub-titulo-sessao{
+    color: white;
+}
+
+#sub-hero::before{
+    position: absolute;
+    content: "";
+    inset: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* #etapas .container-card-apresentacao .card-apresentacao .titulo-card{
+    height: 100px;
+}
+
+#etapas .container-card-apresentacao .card-apresentacao .descricao-card{
+    height: 160px;
+} */
+
+
+@media (max-width: 768px) {
+    #etapas .container-card-apresentacao .card-apresentacao{
+    }
+    #etapas .container-card-apresentacao .card-apresentacao .titulo-card{
+        height: 90px;
+    }
+}
+    
+@media (min-width: 768px) {
+            #etapas .container-card-apresentacao{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto auto 1fr auto auto;
+                gap: 5px 20px;
+            }
+
+            #etapas .container-card-apresentacao .card-apresentacao .img-card{
+                height: 350px;
+            }
+
+        }
+        
+        #etapas .container-card-apresentacao .card-apresentacao .img-card img{
+            height: 100%;
+        }
+
+#construcao01 .cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 1fr;
+}
+
+#construcao01 .cards .card{
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 2;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+@media (max-width: 991px) {
+    #construcao01 .cards{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+#construcao01 .cards .card h5{
+    font-size: clamp(1rem, 1rem, 1.1rem);
+    margin: 0;
+}
+
+#construcao01 .cards .card p{
+    font-size: clamp(.85rem, .90rem, .95rem);
+}

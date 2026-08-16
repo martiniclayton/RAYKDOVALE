@@ -329,8 +329,8 @@
                     <div class="col-md-12">
                         <div class="btns-filtro">
                             <button class="btn-fiiltro clicado" onclick="filtragem(this)" value="Todos">Todos</button>
-                            <button id="btn-construcao" class="btn-fiiltro" onclick="filtragem(this)" value="Construção">Construção</button>
-                            <button  class="btn-fiiltro" onclick="filtragem(this)" value="Manutenção">Manutenção</button>
+                            <button class="btn-fiiltro" onclick="filtragem(this)" value="Construção">Construção</button>
+                            <button id="btn-manutencao" class="btn-fiiltro" onclick="filtragem(this)" value="Manutenção">Manutenção</button>
                             <button class="btn-fiiltro" onclick="filtragem(this)" value="Reforma">Reforma</button>
                         </div>
                     </div>
@@ -401,7 +401,7 @@
     <script src="assets/js/navbar2.js"></script>
     <script src="assets/js/portifolio.js"></script>
     <script>
-        const botao = document.getElementById("btn-construcao");
+        const botao = document.getElementById("btn-manutencao");
 
         filtragem(botao);
     </script>
