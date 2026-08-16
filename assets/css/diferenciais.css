@@ -6,6 +6,9 @@
             display: flex;
             justify-content: end;
         }
+        #diferenciais p{
+            color: rgba(255,255,255,.65) !important
+        }
 
         .sub-titulo-sessao{
         }
