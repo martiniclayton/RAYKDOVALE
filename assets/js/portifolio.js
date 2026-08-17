@@ -57,7 +57,7 @@ function atualizarTela(arrayObras){
             <div class="box-obra">
                 <div class="img-box-obra">
                     <span class="categoria">${obra.categoria}</span>
-                    <img src="${obra.imagem}" width="100%" alt="">
+                    <img src="${obra.imagem}" width="100%" alt="Obra realizada pela Rayk do Vale Construtora">
                 </div>
                 <div class="conteudo-box-obra"><h4>${obra.nome}</h4>
                 <p>${obra.local}</p></div>

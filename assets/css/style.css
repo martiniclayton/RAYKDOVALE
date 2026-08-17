@@ -10,3 +10,40 @@
 @import url(CTA.css);
 @import url(diferenciais.css);
 /* @import url(header2.css); */
+
+#contato p{
+    margin: 0;
+}
+
+#contato .row .col-md-4{
+    margin-bottom: 50px;
+}
+
+#contato iframe{
+    width: 100%;
+}
+
+#contato .box .item{
+    display: flex;
+    justify-content: space-between;
+}
+
+#cookie{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+    background: #f8f8f9;
+    background: rgba(255, 255, 255, 0.8);
+    display: none;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.caixa-cookie{
+    align-self: self-end;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: end;
+}

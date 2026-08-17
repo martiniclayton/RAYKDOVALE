@@ -14,7 +14,7 @@
             max-width: 600px;
         }
 
-        .container-CTA  h1{
+        .container-CTA  h2{
             font-size: clamp(2rem, 4vw, 4.5rem);
             font-weight: 600;
             text-transform: uppercase;
