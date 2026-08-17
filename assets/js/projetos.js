@@ -1,5 +1,15 @@
 const projetos = [
     {
+        imgProjeto: "assets/imagens/obras-andamento/iniciocasasamigosdobem.jpeg", 
+        nomeProjeto: "Residências Sociais", 
+        descricao: "Execução de fundação, alvenaria e infraestrutura para novas moradias sociais em parceria com a ONG Amigos do Bem.", 
+        prazo: "Em andamento", 
+        localProjeto: "Inajá, PE",
+        categoria: "Residencial",
+        icone: "house",
+        status: "Em andamento"
+    },
+    {
         imgProjeto: "assets/imagens/obras-andamento/obra01galpao.jpeg", 
         nomeProjeto: "Construção de Galpão", 
         descricao: "Execução da fundação e estrutura inicial de um novo galpão, com foco em segurança, resistência e qualidade em cada etapa da obra.", 
@@ -17,7 +27,7 @@ const projetos = [
         localProjeto: "Buíque, PE",
         categoria: "Comercial",
         icone: "building",
-        status: "Em andamento"
+        status: "Entregue"
     },
 ];
 

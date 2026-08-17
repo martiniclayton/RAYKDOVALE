@@ -47,3 +47,7 @@
     align-items: center;
     justify-content: end;
 }
+
+#cookie button{
+    width: 100%;
+}
